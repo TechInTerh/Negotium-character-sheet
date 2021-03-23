@@ -1,66 +1,303 @@
-/* Set the min-width so that when the window is resized the look will stay consistant */
+/*------------------------------------------------*\
+  #GENERAL
+\*------------------------------------------------*/
 
-.charsheet {
-	background-color: #ddd;
-	min-width: 800px;
-}
 
-/* Universal styling applied to all elements of these types */
+/* --------- Text ------------- */
 
-h2 {
+span.sheet-bold{
+	font-weight: 800;
+	font-size: medium;
+  }
+  
+  label {
+	margin: 5px 0px 5px 0px;
+	font-size: 1.1em;
+  }
+  
+  h2 {
 	font-size: 2em;
 	margin-bottom: 10px;
 	text-align: center;
 }
 
-label {
-	display: inline-block;
-	width: 31%;
-}
-
-input {
-	display: inline-block;
-	width: 165px;
-}
-
-img {
-	max-height: 100px;
-}
-
-textarea {
-	resize: vertical;
-}
-
-/* Targetted styling that only effects elements with these classes */
-input.sheet-short {
-	width: 17%;
-}
-
-select.sheet-dtype {
-    vertical-align: top;
-    width: 60px;
-}
-span.sheet-dee {
+  /* --------- Inputs ------------- */
+  
+  input[type="text"] {
+	background-color: transparent;
+	border-style: none none solid none;
+	border-color: black;
+  }
+  
+  input[type="number"] {
+	background-color: transparent;
+	border: none;
+	margin-left: 15px;
+  }
+  
+  textarea {
+	background-color: transparent;
+	width: 89%;
+	height: 70%;
+	margin-right: 15px;
+  }
+  
+  input[type="checkbox"].sheet-checkbox {
+	border-style: solid black;
+	border-radius: 0px;
+  }
+  
+  textarea:focus,
+  input[type="text"]:focus,
+  input[type="number"]:focus{
+	background-color: #F6CED8;
+  }
+  
+  /* -----Hides up/down buttons on numberfields that don't need them ---*/
+  
+  input[type=number].sheet-ref::-webkit-inner-spin-button,
+  input[type=number].sheet-ref::-webkit-outer-spin-button,
+  input[type=number].sheet-txtfield::-webkit-inner-spin-button,
+  input[type=number].sheet-txtfield::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+  }
+  input[type=number].sheet-ref,
+  input[type=number].sheet-txtfield {
+	-moz-appearance: textfield;
+  }
+  
+  /* ------- Buttons ---------- */
+  
+  button[type="roll"]:not(.sheet-small){
+	color: black;
+	height: 20px;
+	width: 20px;
+	margin-left: 15px;
+  }
+  
+  button[type="roll"]:not(.sheet-small)::before{
 	font-size: 1.4em;
-	font-weight: bold;
-	left: -16%;
-	padding-right: 4px;
-	position: relative;
-	top: 3px;
+  }
+  
+  
+  /*-----------------------------------------------------------------*\
+	#SECTIONS
+  \*-----------------------------------------------------------------*/
+  
+  
+  /* --------- General Section Styling ------------- */
+  .sheet-flex-center {
+	display: flex;
+	align-items: center;
+  }
+  
+  .sheet-flex-middle {
+	display: flex;
+	justify-content: center;
+  }
+  
+  .sheet-flex-down {
+	flex-flow: column nowrap;
+  }
+  
+  .sheet-section {
+	  padding: 5px;
+	  min-height: 90%;
+  }
+  
+  
+  /*  ----- Character Sheet Structure -------
+  
+  '.sheet-main' defines the sheet's general structure and dimensions using CSS Grid.
+  
+  It uses 'Grid template areas' to name  each sheet section,
+  so that they can be positioned in the grid easily,
+   while also providing a human-readable overview. */
+  div.sheet-main {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr 1fr 1.5fr 1.5fr;
+	grid-template-areas:"logo   name"
+						"attaque   etats"
+						"attaque  aptitudes"
+						"description  aptitudes";
+	grid-gap: 3px;
+	width:    800px; /* Defines the width and height of the sheet */
+	height:   1000px;
+	background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLborder.jpg?raw=true);
+	background-size: 800px 1000px; /* Sets the sheet border image to same size as sheet */
+	background-repeat: no-repeat;
+  }
+  
+  /* Section-specific CSS is written in a way that removes the need to define classes
+  on each individual   */
+  
+  /* LOGO SECTION */
+  
+  div.sheet-logo{
+	grid-area: logo;
+	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/logo.png);
+	background-size: 200px 200px;
+	background-repeat: no-repeat;
+	margin-left: 5px;
+	margin-top: -30px;
+	display: flex;
+	justify-content:flex-start;
+	align-items:flex-start;
+	flex-flow: column;
+  }
+  
+  div.sheet-logo span{
+	font-size: 15px;
+	background-color: white;
+	border: 2px solid black; 
+  }
+  div.sheet-logo h2
+  {
+	padding-left: 10%;
+	padding-top: 70%;
+  }
+  
+  /* NAME SECTION */
+  
+  div.sheet-name{
+	grid-area: name;
+	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Part.png);
+	background-repeat: no-repeat;
+	background-size: 573px 188px;
+	background-position-y: 10px;
+	padding-top: 10px;
+	display: grid; /* the grid that contain the 3 aptitude */
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-gap: 5px;
+  }
+  
+  div.sheet-name div.sheet-section-small{
+	background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLblock1.jpg?raw=true);
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 200px;
+  }
+  
+  div.sheet-name label{
+	width: 30px;
+	padding-left: 15px;
+  }
+  
+  div.sheet-name input[type="text"]{
+	width: 100px;
+  }
+  div.sheet-name input[type="checkbox"]{
+	width: 50px;
+  }
+  
+
+/* ETATS SECTION */
+div.sheet-etats {
+	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Part.png);
+	background-repeat: no-repeat;
+	background-size: 575px 195px;
+	grid-area: etats;
+	display: grid;
+	padding-right: 10%; 
+	width: 560px;
+	margin-right: 20px;
+	grid-template-columns: 1fr 1fr 1fr 0.7fr;
+	grid-template-rows: 0.8fr 1fr 1.5fr;
+	grid-gap: 5px;
+  }
+  div.sheet-etats div.sheet-section-stat{
+	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/square_sta_newt.png);
+	background-size: 105px 45px;
+	background-repeat: no-repeat;
+	background-position-x: 90%;
+	background-position-y: center;
+  }
+    
+  div.sheet-etats label{
+	width: auto;
+	margin-top: 3px;
+	margin-right: auto;
+	padding-right: 5px;
+  }
+  div.sheet-etats input[type="number"] {
+	margin-right: 5%;
+	margin-left: 0px;
+
+  }
+
+
+  /* APTITUDES SECTION */
+  div.sheet-aptitudes{
+	  grid-area: aptitudes;
+	  background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
+	  background-repeat: no-repeat;
+	  background-size: 470px 585px;
+	  padding-left: 15px;
+	  padding-top: 20px;
+	  display: grid; /* the grid that contain the 3 aptitude */
+	  grid-template-columns: 1fr;
+	  grid-template-rows: 0.2fr 1fr 0.2fr 1fr 0.2fr 1fr;
+	  grid-gap: 1px;
+  }
+  div.sheet-aptitudes div.sheet-section-small{
+	background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLblock1.jpg?raw=true);
+	background-size:200px  30px ;
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 200px;
+  }
+
+
+  div.sheet-aptitudes div.sheet-section-big{
+
+	height: 150px;
+	width: 420px;
+	padding-left: 9px;
+	padding-top: 1px;
+	display: grid; /* the grid with all sub-attribute */
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr ;
+  }
+  div.sheet-aptitudes div.sheet-section-very-small{
+	background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLblock1.jpg?raw=true);
+	background-size:165px  30px ;
+	background-repeat: no-repeat;
+	height: 30px;
+	width: 165px;
+	display: grid; 
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr ;
+  }
+  div.sheet-aptitudes label{
+	width: 80px;
+	padding-left: 10px;
+  }
+  
+  div.sheet-aptitudes input{
+	width: 100px;
+  }
+
+
+/*ATTACK SECTION */
+
+div.sheet-attaque {
+	
+	grid-area: attaque;
+	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Vert.png);
+	background-size: 198px 480px;
+	background-position-x: -2px;
+	background-repeat: no-repeat;
+	margin-left: 15px;
 }
 
-/* Targetted styling that only effects elements contained within the stated class */
-.sheet-stats h3 {
-	display: inline-block;
-	text-align: left;
+div.sheet-attaque div.sheet-repeating_attaque {
+	margin-left: 20px;
 }
-
-.sheet-stats h3:first-child {
-	margin-left: 35%;
-	margin-right: 15%;
-}
-
-.sheet-stats input {
-	margin-right: 8%;
-	width: 17%;
+div.sheet-attaque input[type="text"] {
+	width: 95px;
+	margin-bottom: 5px;
 }
