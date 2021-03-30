@@ -1,12 +1,12 @@
 <!--Button for Tabs -->
 <div>
     <button type="action" name="act_character" >Character</button>
-    <button type="action" name="act_journal" >Journal</button>
+    <button type="action" name="act_capacite" >Capacité</button>
 </div>
 <input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab'  value='character'  />
 <div class='sheet-character'>
-<div class="main">
-    <!-- LOGO SECTION -->
+    <div class="main">
+        <!-- LOGO SECTION -->
         <div class="logo section">
             <h2>Fiche de Personnage</h2>
         </div>
@@ -95,16 +95,10 @@
                 <h5>Total : <input name="attr_mobilite" type="number" value="3+floor(@{physique}/2) + @{athletisme}+@{ajout_mobilite}" disabled="true"></h5>
             </div>
         </div>
-        <!--ATTACK SECTION -->
-        <div class="attaque section">
-            <h2>Attaques</h2>
-
-            <fieldset class="repeating_attaque">
-                <input type="text" name="attr_attaque_name" />
-                <input type="number" name="attr_number_of_dfour" value="0"/>
-                <button name="roll_attaque" type="roll" value="&{template:default} {{name=@{attaque_name}}} {{button=[[(@{number_of_dfour}+@{modif_jet})d4s]]}}"></button>
-            </fieldset>
-            <!-- #region &{template:default} {{name=@{attaque_name}}} {{Result=[[ (@{number_of_dfour}+@{modif_jet})d4s]]}}-->
+        <!--DESCRIPTION SECTION -->
+        <div class="description section">
+            <h2>Description</h2>
+            <textarea name="attr_notes"></textarea>
         </div>
         <!-- APTITUDES SECTION -->
         <div class="aptitudes section">
@@ -228,12 +222,26 @@
     </div>
 </div>
 
-<div class='sheet-journal'>
-    <h2>Journal/Notes</h2>
-    <span>Journal/Notes Stuff Goes here</span>
+<div class='sheet-capacite'>
+    <div class="main_capacite">
+        <div class="logo_capacite section">
+            <h2>Capacités</h2>
+        </div>
+        <div class="faculte_capacite section">
+            <h3>Facultés/Capacité</h3>
+             <fieldset class="repeating_attaque">
+                <input type="text" name="attr_name_capa" placeholder="Nom de la Capacité"/>
+                <input type="text" name="attr_dice_for_success_capa" value="1d6" class="sheet-small" placeholder="Succès"/>
+                <input type="text" name="attr_dice_for_damages_capa" value="1d4" class="sheet-small"placeholder="Dégats"/>
+                <button name="roll_attaque_capa" type="roll" value="&{template:default} {{name=@{name_capa}}} {{Succès=[[@{dice_for_success_capa}]]}} {{Damage=[[@{dice_for_damages_capa}]]}}" class= "small"></button>
+                <textarea name="attr_description_capa" placeholder="Entrez la description de la capacité Ici"></textarea>
+            </fieldset>
+        </div>
+
+    </div>
 </div>
 <script type="text/worker">
-    const buttonlist = ["character","journal"];
+    const buttonlist = ["character","capacite"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
