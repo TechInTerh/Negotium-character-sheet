@@ -44,12 +44,13 @@ span.sheet-bold{
 	border: none;
 	margin-left: 15px;
   }
-  
-  textarea {
+
+textarea
+{
+	resize: none;
 	background-color: transparent;
 	width: 89%;
 	height: 70%;
-	margin-right: 15px;
   }
   
   input[type="checkbox"].sheet-checkbox {
@@ -322,7 +323,7 @@ span.sheet-bold{
 div.sheet-main_capacite {
 	display: grid;
 	grid-template-columns: 2fr 3fr;
-	grid-template-rows: 1fr 1fr 3fr;
+	grid-template-rows: 0.8fr 0.5fr 4fr;
 	grid-template-areas:"logo   info_perso"
 						"argent  faculte"
 						"equipement faculte";
@@ -344,7 +345,7 @@ div.sheet-logo_capacite{
 	align-items:flex-start;
 	flex-flow: column;
 	background-position-y: -30px;
-	background-position-x: center;
+	background-position-x: 6px;
 }
 
 div.sheet-logo_capacite span{
@@ -354,8 +355,8 @@ div.sheet-logo_capacite span{
 }
 div.sheet-logo_capacite h2
 {
-	padding-left: 30%;
-	padding-top: 40%;
+	padding-left: 14%;
+	padding-top: 32%;
 }
 
 div.sheet-faculte_capacite
@@ -363,13 +364,13 @@ div.sheet-faculte_capacite
 	grid-area: faculte;
 	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
 	background-repeat: no-repeat;
-    background-size: 460px 780px;
+    background-size: 460px 840px;
 	background-position-x :50%;
 	padding-right: 5%;
 	padding-top: 3%;
 	padding-left: 3%;
 }
-div.sheet-faculte_capacite h3
+div.sheet-main_capacite h3
 {
     padding-left: 30%;
 }
@@ -383,4 +384,53 @@ div.sheet-faculte_capacite input[type="text"]
 }
 div.sheet-faculte_capacite input[type="text"].sheet-small {
     width: 50px;
+}
+
+div.sheet-faculte_capacite textarea
+{
+	resize: vertical;
+	width: 95%;
+}
+div.sheet-argent_capacite
+{
+	grid-area: argent;
+	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
+	background-size: 300px 90px;
+	background-repeat: no-repeat;
+	background-position-x :100%;
+    padding-left: 30px;
+}
+
+div.sheet-argent_capacite input[type="number"]
+{
+
+	border: 1px solid gray;
+	width: 25%;
+	height: 35%;
+	font-size: x-large;
+}
+
+
+div.sheet-equipement_capacite
+{
+	grid-area: equipement;
+	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
+	background-size: 307px 740px;
+	background-repeat: no-repeat;
+	background-position-x: 11px ;
+	padding-left: 6%;
+	padding-right: 3%;
+}
+
+div.sheet-equipement_capacite input[type="text"]
+{
+	background-color: transparent;
+	border-style: outset outset outset outset;
+	border-color: grey;
+	border-radius: 25px;
+}
+div.sheet-equipement_capacite textarea
+{
+	resize: vertical;
+    width: 95%;
 }

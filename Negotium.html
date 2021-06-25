@@ -227,6 +227,12 @@
         <div class="logo_capacite section">
             <h2>Capacités</h2>
         </div>
+        <div class="argent_capacite section">
+            <span>
+                Nombre de PO :
+            </span>
+            <input type="number" name="attr_numbre_PO">
+        </div>
         <div class="faculte_capacite section">
             <h3>Facultés/Capacité</h3>
              <fieldset class="repeating_attaque">
@@ -237,7 +243,13 @@
                 <textarea name="attr_description_capa" placeholder="Entrez la description de la capacité Ici"></textarea>
             </fieldset>
         </div>
-
+        <div class="sheet-equipement_capacite section">
+            <h3>Equipements</h3>
+            <fieldset class="repeating_equipement">
+                <input type="text" name="attr_name_equip" placeholder="Nom">
+                <textarea name="attr_description_equip" placeholder="Descripion"></textarea>
+            </fieldset>
+        </div>
     </div>
 </div>
 <script type="text/worker">
