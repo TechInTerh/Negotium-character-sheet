@@ -3,13 +3,16 @@
 \*------------------------------------------------*/
 /*Configure the tab buttons*/
 .sheet-character,
-.sheet-capacite {
+
+.sheet-capacite,
+.sheet-sorts-dons {
 	display: none;
 }
 
 /* show the selected tab */
 .sheet-tabstoggle[value="character"] ~ div.sheet-character,
-.sheet-tabstoggle[value="capacite"] ~ div.sheet-capacite {
+.sheet-tabstoggle[value="capacite"] ~ div.sheet-capacite,
+.sheet-tabstoggle[value="sorts-dons"] ~div.sheet-sorts-dons {
 	display: block;
 }
 
