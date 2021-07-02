@@ -269,7 +269,7 @@
 			<fieldset class="repeating_attaque">
 				<input type="text" name="attr_name_capa" placeholder="Nom de la Capacité"/>
 				<button name="roll_attaque_capa" type="roll"
-						value="&{template:default} {{name=@{name_capa}}} {{Succès=[[ (@{sous_apti_dice_for_success_capa} + @{bonus_dice_for_success_capa})d6 + @{apti_value_for_success_capa} + @{bonus_value_for_success_capa} ]]}} {{Damage=[[0]]}}"
+						value="&{template:default} {{name=@{name_capa}}} {{Succès=[[ (@{sous_apti_dice_for_success_capa} + @{bonus_dice_for_success_capa})d6 + @{apti_value_for_success_capa} + @{bonus_value_for_success_capa} ]]}} {{Damage=[[(@{sous_apti_dice_for_degat_capa} + @{bonus_dice_for_degat_capa})d4s]]}}"
 						class="small"></button>
 
 				<br></br>
