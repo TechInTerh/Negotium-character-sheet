@@ -44,7 +44,7 @@ span.sheet-bold{
   
   input[type="number"] {
 	background-color: transparent;
-	border: none;
+	border: 1px solid gray;
 	margin-left: 15px;
   }
 
@@ -291,10 +291,6 @@ textarea
 		padding-left: 10px;
 	  }
 
-	  div.sheet-aptitudes input{
-		width: 100px;
-	  }
-
 
 	/*DESCRIPTION SECTION */
 
@@ -378,6 +374,7 @@ div.sheet-main_capacite h3
     padding-left: 30%;
 }
 
+
 div.sheet-faculte_capacite input[type="text"]
 {
 	background-color: transparent;
@@ -394,6 +391,16 @@ div.sheet-faculte_capacite textarea
 	resize: vertical;
 	width: 95%;
 }
+
+div.sheet-faculte_capacite select
+{
+	width: 15%;
+}
+
+div.sheet-faculte_capacite input[type="number"]
+{
+	margin-left: 0%;
+}
 div.sheet-argent_capacite
 {
 	grid-area: argent;
@@ -406,8 +413,6 @@ div.sheet-argent_capacite
 
 div.sheet-argent_capacite input[type="number"]
 {
-
-	border: 1px solid gray;
 	width: 25%;
 	height: 35%;
 	font-size: x-large;
