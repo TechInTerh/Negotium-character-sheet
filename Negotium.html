@@ -112,39 +112,39 @@
                 <div class="section-very-small flex-center">
                     <label>Dexterité: </label>
                     <input name="attr_dexterite" type="number" value="0">
-                    <button name="roll_dexterite" type="roll" value="&{template:default} {{name=Dexterite}} {{Result=[[ ((@{dexterite} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + @{physique} ]] }}"></button>
+                    <button name="roll_dexterite" type="roll" value="&{template:default} {{name=Dexterite}} {{Result=[[ ((@{dexterite} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6  + @{physique} ]] }}"></button>
 
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Const: </label>
                     <input name="attr_constitution" type="number" value="0">
-                    <button name="roll_constitution" type="roll" value="&{template:default} {{name=Constitution}} {{Result=[[ ((@{constitution} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{physique}) ]]}}"></button>
+                    <button name="roll_constitution" type="roll" value="&{template:default} {{name=Constitution}} {{Result=[[ ((@{constitution} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
 
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Visée: </label>
                     <input name="attr_visee" type="number" value="0">
-                    <button name="roll_visee" type="roll" value="&{template:default} {{name=Visee}} {{Result=[[ ((@{visee} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{physique}) ]]}}"></button>
+                    <button name="roll_visee" type="roll" value="&{template:default} {{name=Visee}} {{Result=[[ ((@{visee} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Mélée: </label>
                     <input name="attr_melee" type="number" value="0">
-                    <button name="roll_melee" type="roll" value="&{template:default} {{name=Melee}} {{Result=[[ ((@{melee} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{physique}) ]]}}"></button>
+                    <button name="roll_melee" type="roll" value="&{template:default} {{name=Melee}} {{Result=[[ ((@{melee} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Athletisme: </label>
                     <input name="attr_athletisme" type="number" value="0">
-                    <button name="roll_athletisme" type="roll" value="&{template:default} {{name=Athletisme}} {{Result=[[ ((@{athletisme} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{physique}) ]]}}"></button>
+                    <button name="roll_athletisme" type="roll" value="&{template:default} {{name=Athletisme}} {{Result=[[ ((@{athletisme} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Discretion: </label>
                     <input name="attr_discretion" type="number" value="0">
-                    <button name="roll_discretion" type="roll" value="&{template:default} {{name=Discretion}} {{Result=[[ ((@{discretion} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{physique}) ]]}}"></button>
+                    <button name="roll_discretion" type="roll" value="&{template:default} {{name=Discretion}} {{Result=[[ ((@{discretion} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Force: </label>
                     <input name="attr_force" type="number" value="0">
-                    <button name="roll_force" type="roll" value="&{template:default} {{name=Force}} {{Result=[[ ((@{force} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{physique}) ]]}}"></button>
+                    <button name="roll_force" type="roll" value="&{template:default} {{name=Force}} {{Result=[[ ((@{force} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
                 </div>
             </div>
             <div class="section-small flex-center">
@@ -155,37 +155,37 @@
                 <div class="section-very-small flex-center">
                     <label>Intimidation: </label>
                     <input name="attr_intimidation" type="number" value="0">
-                    <button name="roll_intimidation" type="roll" value="&{template:default} {{name=Intimidation}} {{Result=[[ ((@{intimidation} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{social}) ]]}}"></button>
+                    <button name="roll_intimidation" type="roll" value="&{template:default} {{name=Intimidation}} {{Result=[[ ((@{intimidation} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Charisme: </label>
                     <input name="attr_charisme" type="number" value="0">
-                    <button name="roll_charisme" type="roll" value="&{template:default} {{name=Charisme}} {{Result=[[ ((@{charisme} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{social}) ]]}}"></button>
+                    <button name="roll_charisme" type="roll" value="&{template:default} {{name=Charisme}} {{Result=[[ ((@{charisme} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Identification: </label>
                     <input name="attr_identification" type="number" value="0">
-                    <button name="roll_indentification" type="roll" value="&{template:default} {{name=Identification}} {{Result=[[ ((@{identification} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{social}) ]]}}"></button>
+                    <button name="roll_indentification" type="roll" value="&{template:default} {{name=Identification}} {{Result=[[ ((@{identification} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Imposture: </label>
                     <input name="attr_imposture" type="number" value="0">
-                    <button name="roll_imposture" type="roll" value="&{template:default} {{name=Imposture}} {{Result=[[ ((@{imposture} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{social}) ]]}}"></button>
+                    <button name="roll_imposture" type="roll" value="&{template:default} {{name=Imposture}} {{Result=[[ ((@{imposture} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Connaissance: </label>
                     <input name="attr_connaissance" type="number" value="0">
-                    <button name="roll_connaissance" type="roll" value="&{template:default} {{name=Connaissance}} {{Result=[[ ((@{connaissance} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{social}) ]]}}"></button>
+                    <button name="roll_connaissance" type="roll" value="&{template:default} {{name=Connaissance}} {{Result=[[ ((@{connaissance} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Survie: </label>
                     <input name="attr_survie" type="number" value="0">
-                    <button name="roll_survie" type="roll" value="&{template:default} {{name=Survie}} {{Result=[[ ((@{survie} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{social}) ]]}}"></button>
+                    <button name="roll_survie" type="roll" value="&{template:default} {{name=Survie}} {{Result=[[ ((@{survie} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Loyauté: </label>
                     <input name="attr_loyaute" type="number" value="0">
-                    <button name="roll_loyaute" type="roll" value="&{template:default} {{name=Survie}} {{Result=[[ ((@{loyaute} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{social}) ]]}}"></button>
+                    <button name="roll_loyaute" type="roll" value="&{template:default} {{name=Survie}} {{Result=[[ ((@{loyaute} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
                 </div>
             </div>
             <div class="section-small flex-center">
@@ -196,27 +196,27 @@
                 <div class="section-very-small flex-center">
                     <label>Recherche: </label>
                     <input name="attr_recherche" type="number" value="0">
-                    <button name="roll_recherche" type="roll" value="&{template:default} {{name=Recherche}} {{Result=[[ ((@{recherche} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{mental}) ]]}}"></button>
+                    <button name="roll_recherche" type="roll" value="&{template:default} {{name=Recherche}} {{Result=[[ ((@{recherche} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Perception: </label>
                     <input name="attr_perception" type="number" value="0">
-                    <button name="roll_perception" type="roll" value="&{template:default} {{name=Perception}} {{Result=[[ ((@{perception} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{mental}) ]]}}"></button>
+                    <button name="roll_perception" type="roll" value="&{template:default} {{name=Perception}} {{Result=[[ ((@{perception} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Resistance_M: </label>
                     <input name="attr_resistance_mental" type="number" value="0">
-                    <button name="roll_resistance_mental" type="roll" value="&{template:default} {{name=Resistance_Mental}} {{Result=[[ ((@{resistance_mental} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{mental}) ]]}}"></button>
+                    <button name="roll_resistance_mental" type="roll" value="&{template:default} {{name=Resistance_Mental}} {{Result=[[ ((@{resistance_mental} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Concentration: </label>
                     <input name="attr_concentration" type="number" value="0">
-                    <button name="roll_concentration" type="roll" value="&{template:default} {{name=Concentration}} {{Result=[[ ((@{concentration} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1))d6 + (@{mental}) ]]}}"></button>
+                    <button name="roll_concentration" type="roll" value="&{template:default} {{name=Concentration}} {{Result=[[ ((@{concentration} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
                 </div>
                 <div class="section-very-small flex-center">
                     <label>Analyse: </label>
                     <input name="attr_analyse" type="number" value="0">
-                    <button name="roll_analyse" type="roll" value="&{template:default} {{name=Analyse}} {{Result=[[ (((@{analyse} + @{is_bonus_divin} + @{modif_jet})) * (@{is_avantage} + 1))d6 + (@{mental}) ]]}}"></button>
+                    <button name="roll_analyse" type="roll" value="&{template:default} {{name=Analyse}} {{Result=[[ (((@{analyse} + @{is_bonus_divin} + @{modif_jet})) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
                 </div>
             </div>
         </div>
