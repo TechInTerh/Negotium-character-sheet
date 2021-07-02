@@ -2,6 +2,7 @@
 <div>
     <button type="action" name="act_character" >Character</button>
     <button type="action" name="act_capacite" >Capacité</button>
+    <button type="action" name="act_sorts-dons">Sorts_Dons</button>
 </div>
 <input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab'  value='character'  />
 <div class='sheet-character'>
@@ -232,6 +233,12 @@
                 Nombre de PO :
             </span>
             <input type="number" name="attr_numbre_PO">
+            <br></br>
+            <br></br>
+            <span>
+                Nombre de PA :
+            </span>
+            <input type="number" name="attr_nombre_PA">
         </div>
         <div class="faculte_capacite section">
             <h3>Facultés/Capacité</h3>
@@ -252,8 +259,30 @@
         </div>
     </div>
 </div>
+<div class='sheet-sorts-dons'>
+    <div class="main_sorts-dons">
+        <div class="logo_sorts-dons section">
+            <h2>
+                Sorts et dons
+            </h2>
+        </div>
+         <div class="text1_sorts-dons section">
+            <textarea name="text1">
+            </textarea>
+        </div>
+
+        <div class="text2_sorts-dons section">
+            <textarea name="text2">
+            </textarea>
+        </div>
+        <div class="text3_sorts-dons section">
+            <textarea name="text3">
+            </textarea>
+        </div>
+    </div>
+</div>
 <script type="text/worker">
-    const buttonlist = ["character","capacite"];
+    const buttonlist = ["character","capacite","sorts-dons"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({

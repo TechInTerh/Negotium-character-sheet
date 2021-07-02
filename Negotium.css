@@ -155,8 +155,8 @@ textarea
 		justify-content:flex-start;
 		align-items:flex-start;
 		flex-flow: column;
-	  background-position-y: -30px;
-		  background-position-x: center;
+	  	background-position-y: -30px;
+		background-position-x: center;
 	  }
 
 	  div.sheet-logo span{
@@ -410,7 +410,6 @@ div.sheet-argent_capacite input[type="number"]
 	font-size: x-large;
 }
 
-
 div.sheet-equipement_capacite
 {
 	grid-area: equipement;
@@ -433,4 +432,81 @@ div.sheet-equipement_capacite textarea
 {
 	resize: vertical;
     width: 95%;
+}
+/* _________________Sorts-Dons Sheet Structure ________________*/
+
+div.sheet-main_sorts-dons
+{
+	display: grid;
+	grid-template-columns: 0.7fr 2fr;
+	grid-template-rows: 0.5fr 1fr 2fr;
+
+	grid-template-areas: "logo   text1"
+						 "text2  text2"
+						 "text3  text3";
+	grid-gap: 3px;
+	width: 800px;
+	height: 1000px;
+	background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLborder.jpg?raw=true);
+	background-size: 800px 1000px; /* Sets the sheet border image to same size as sheet */
+	background-repeat: no-repeat;
+}
+div.sheet-logo_sorts-dons{
+	grid-area: logo;
+	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/logo.png);
+	background-size: 200px 200px;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content:flex-start;
+	align-items:flex-start;
+	flex-flow: column;
+  	background-position-y: -30px;
+	background-position-x: center;
+  }
+  div.sheet-logo_sorts-dons span{
+	font-size: 15px;
+	background-color: white;
+	border: 2px solid black;
+}
+
+div.sheet-logo_sorts-dons h2
+{
+	padding-left: 14%;
+	padding-top: 50%
+}
+div.sheet-text1_sorts-dons
+{
+	grid-area: text1;
+}
+div.sheet-text1_sorts-dons  textarea
+{
+	margin-left: 5%;
+	margin-top: 3%;
+	width: 90%;
+	height: 85%;
+}
+div.sheet-text2_sorts-dons
+{
+	grid-area: text2;
+}
+
+div.sheet-text2_sorts-dons  textarea
+{
+	margin-left: 5%;
+	margin-top: 1%;
+	width: 90%;
+	height: 80%;
+}
+
+div.sheet-text3_sorts-dons
+{
+	grid-area: text3;
+}
+
+div.sheet-text3_sorts-dons  textarea
+{
+	margin-left: 5%;
+
+	width: 90%;
+	height: 95%;
 }
