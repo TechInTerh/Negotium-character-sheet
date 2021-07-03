@@ -269,14 +269,31 @@
 			<fieldset class="repeating_attaque">
 				<input type="text" name="attr_name_capa" placeholder="Nom de la Capacité"/>
 				<button name="roll_attaque_capa" type="roll"
-						value="&{template:default} {{name=@{name_capa}}} {{Succès=[[ (@{sous_apti_dice_for_success_capa} + @{bonus_dice_for_success_capa})d6 + @{apti_value_for_success_capa} + @{bonus_value_for_success_capa} ]]}} {{Damage=[[(@{sous_apti_dice_for_degat_capa} + @{bonus_dice_for_degat_capa})d4s]]}}"
+						value="&{template:default} {{name=@{name_capa}}} {{Succès=[[ ( (@{sous_apti_dice_for_success_capa} + @{bonus_dice_for_success_capa} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + @{apti_value_for_success_capa} + @{bonus_value_for_success_capa} ]]}} {{Damage=[[(@{sous_apti_dice_for_degat_capa} + @{bonus_dice_for_degat_capa})d4s]]}}"
 						class="small"></button>
 
 				<br></br>
 				<span>Succès:</span>
 				<select name="attr_sous_apti_dice_for_success_capa">
+					<option value="@{dexterite}">Dextérité</option>
+					<option value="@{constitution}">Constitution</option>
+					<option value="@{visee}">Visee</option>
 					<option value="@{melee}">Mélée</option>
+					<option value="@{athletisme}">Athletisme</option>
+					<option value="@{discretion}">Discretion</option>
 					<option value="@{force}">Force</option>
+					<option value="@{intimidation}">Intimidation</option>
+					<option value="@{charisme}">Charisme</option>
+					<option value="@{identification}">Identification</option>
+					<option value="@{imposture}">Imposture</option>
+					<option value="@{connaissance}">Connaissance</option>
+					<option value="@{survie}">Survie</option>
+					<option value="@{loyaute}">Loyauté</option>
+					<option value="@{recherche}">Recherche</option>
+					<option value="@{perception}">Perception</option>
+					<option value="@{resistance_mental}">Resistance_M</option>
+					<option value="@{concentration}">Concentration</option>
+					<option value="@{analyse}">Analyse</option>
 					<option value="0">--</option>
 				</select>
 				<span>+</span>
@@ -294,8 +311,25 @@
 				<br></br>
 				<span>Dégât:</span>
 				<select name="attr_sous_apti_dice_for_degat_capa">
+					<option value="@{dexterite}">Dextérité</option>
+					<option value="@{constitution}">Constitution</option>
+					<option value="@{visee}">Visee</option>
 					<option value="@{melee}">Mélée</option>
+					<option value="@{athletisme}">Athletisme</option>
+					<option value="@{discretion}">Discretion</option>
 					<option value="@{force}">Force</option>
+					<option value="@{intimidation}">Intimidation</option>
+					<option value="@{charisme}">Charisme</option>
+					<option value="@{identification}">Identification</option>
+					<option value="@{imposture}">Imposture</option>
+					<option value="@{connaissance}">Connaissance</option>
+					<option value="@{survie}">Survie</option>
+					<option value="@{loyaute}">Loyauté</option>
+					<option value="@{recherche}">Recherche</option>
+					<option value="@{perception}">Perception</option>
+					<option value="@{resistance_mental}">Resistance_M</option>
+					<option value="@{concentration}">Concentration</option>
+					<option value="@{analyse}">Analyse</option>
 					<option value="0">--</option>
 				</select>
 				<span>+</span>
@@ -345,5 +379,6 @@
             });
         });
     });
+
 
 </script>
