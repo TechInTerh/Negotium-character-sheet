@@ -323,7 +323,7 @@ div.sheet-main_capacite {
 	display: grid;
 	grid-template-columns: 2fr 3fr;
 	grid-template-rows: 0.8fr 0.5fr 4fr;
-	grid-template-areas:"logo   info_perso"
+	grid-template-areas:"logo   faculte"
 						"argent  faculte"
 						"equipement faculte";
 	grid-gap: 3px;
@@ -363,10 +363,10 @@ div.sheet-faculte_capacite
 	grid-area: faculte;
 	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
 	background-repeat: no-repeat;
-    background-size: 460px 840px;
-	background-position-x :50%;
+	background-position-y: 25px;
+    background-size: 470px 970px;
 	padding-right: 5%;
-	padding-top: 3%;
+	padding-top: 7%;
 	padding-left: 3%;
 }
 div.sheet-main_capacite h3
