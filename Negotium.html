@@ -269,7 +269,7 @@
 			<fieldset class="repeating_attaque">
 				<input type="text" name="attr_name_capa" placeholder="Nom de la Capacité"/>
 				<button name="roll_attaque_capa" type="roll"
-						value="&{template:default} {{name=@{name_capa}}} {{Succès=[[ ( (@{sous_apti_dice_for_success_capa} + @{bonus_dice_for_success_capa} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + @{apti_value_for_success_capa} + @{bonus_value_for_success_capa} ]]}} {{Damage=[[(@{sous_apti_dice_for_degat_capa} + @{bonus_dice_for_degat_capa})d4s]]}}"
+						value="&{template:default} {{name=@{name_capa}}} {{Succès=[[ ( (@{sous_apti_dice_for_success_capa} + @{bonus_dice_for_success_capa} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + @{apti_value_for_success_capa} + @{bonus_value_for_success_capa} ]]}} {{Damage=[[(@{sous_apti_dice_for_degat_capa} + @{bonus_dice_for_degat_capa})d4s]]}} {{Action=@{action_capa}}}"
 						class="small"></button>
 
 				<br></br>
@@ -334,9 +334,17 @@
 				</select>
 				<span>+</span>
 				<input type="number" name="attr_bonus_dice_for_degat_capa" value="0"/>
-				<span>d4</span>
+				<span>d4. </span>
+				<span>Action: </span>
+				<select name="attr_action_capa">
+					<option value="Grande Action">Grande Action</option>
+					<option value="Petite Action">Petite Action</option>
+					<option value="Un tour">Un tour</option>
+					<option value="--">--</option>
+				</select>
 				<textarea name="attr_description_capa"
 						  placeholder="Entrez la description de la capacité Ici"></textarea>
+
 			</fieldset>
 		</div>
 		<div class="sheet-equipement_capacite section">
@@ -379,6 +387,7 @@
             });
         });
     });
+
 
 
 </script>
