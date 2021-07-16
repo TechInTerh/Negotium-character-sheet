@@ -57,7 +57,8 @@ textarea
   }
   
   input[type="checkbox"].sheet-checkbox {
-	border-style: solid black;
+	border-style: solid;
+	  border-color: black;
 	border-radius: 0px;
   }
   
