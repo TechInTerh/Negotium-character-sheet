@@ -3,519 +3,522 @@
 \*------------------------------------------------*/
 /*Configure the tab buttons*/
 .sheet-character,
-
 .sheet-capacite,
 .sheet-sorts-dons {
-	display: none;
+    display: none;
 }
 
 /* show the selected tab */
 .sheet-tabstoggle[value="character"] ~ div.sheet-character,
 .sheet-tabstoggle[value="capacite"] ~ div.sheet-capacite,
-.sheet-tabstoggle[value="sorts-dons"] ~div.sheet-sorts-dons {
-	display: block;
+.sheet-tabstoggle[value="sorts-dons"] ~ div.sheet-sorts-dons {
+    display: block;
 }
 
 /* --------- Text ------------- */
 
-span.sheet-bold{
-	font-weight: 800;
-	font-size: medium;
-  }
-  
-  label {
-	margin: 5px 0px 5px 0px;
-	font-size: 1.1em;
-  }
-  
-  h2 {
-	font-size: 2em;
-	margin-bottom: 10px;
-	text-align: center;
+span.sheet-bold {
+    font-weight: 800;
+    font-size: medium;
 }
 
-  /* --------- Inputs ------------- */
-  
-  input[type="text"] {
-	background-color: transparent;
-	border-style: none none solid none;
-	border-color: black;
-  }
-  
-  input[type="number"] {
-	background-color: transparent;
-	border: 1px solid gray;
-	margin-left: 15px;
-  }
+label {
+    margin: 5px 0px 5px 0px;
+    font-size: 1.1em;
+}
 
-textarea
-{
-	resize: none;
-	background-color: transparent;
-	width: 89%;
-	height: 70%;
-  }
-  
-  input[type="checkbox"].sheet-checkbox {
-	border-style: solid;
-	  border-color: black;
-	border-radius: 0px;
-  }
-  
-  textarea:focus,
-  input[type="text"]:focus,
-  input[type="number"]:focus{
-	background-color: #F6CED8;
-  }
-  
-  /* -----Hides up/down buttons on numberfields that don't need them ---*/
-  
-  input[type=number].sheet-ref::-webkit-inner-spin-button,
-  input[type=number].sheet-ref::-webkit-outer-spin-button,
-  input[type=number].sheet-txtfield::-webkit-inner-spin-button,
-  input[type=number].sheet-txtfield::-webkit-outer-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
-  }
-  input[type=number].sheet-ref,
-  input[type=number].sheet-txtfield {
-	-moz-appearance: textfield;
-  }
-  
-  /* ------- Buttons ---------- */
-  
-  button[type="roll"]:not(.sheet-small){
-	color: black;
-	height: 20px;
-	width: 20px;
-	margin-left: 15px;
-  }
-  
-  button[type="roll"]:not(.sheet-small)::before{
-	font-size: 1.4em;
-  }
-  
-  
-  /*-----------------------------------------------------------------*\
-	#SECTIONS
-  \*-----------------------------------------------------------------*/
-  
-  
-  /* --------- General Section Styling ------------- */
-  .sheet-flex-center {
-	display: flex;
-	align-items: center;
-  }
-  
-  .sheet-flex-middle {
-	display: flex;
-	justify-content: center;
-  }
-  
-  .sheet-flex-down {
-	flex-flow: column nowrap;
-  }
-  
-  .sheet-section {
-	  padding: 5px;
-	  min-height: 90%;
-  }
-  
-  
-  /*  ----- Character Sheet Structure -------
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
 
-  '.sheet-main' defines the sheet's general structure and dimensions using CSS Grid.
+/* --------- Inputs ------------- */
 
-  It uses 'Grid template areas' to name  each sheet section,
-  so that they can be positioned in the grid easily,
-   while also providing a human-readable overview. */
-	  div.sheet-main {
-		display: grid;
-		grid-template-columns: 1fr 2fr;
-		grid-template-rows: 1fr 1fr 1.5fr 1.5fr;
-		grid-template-areas:"logo   name"
+input[type="text"] {
+    background-color: transparent;
+    border-style: none none solid none;
+    border-color: black;
+}
+
+input[type="number"] {
+    background-color: transparent;
+    border: 1px solid gray;
+    margin-left: 15px;
+}
+
+textarea {
+    resize: none;
+    background-color: transparent;
+    width: 89%;
+    height: 70%;
+}
+
+input[type="checkbox"].sheet-checkbox {
+    border-style: solid;
+    border-color: black;
+    border-radius: 0px;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="number"]:focus {
+    background-color: #F6CED8;
+}
+
+/* -----Hides up/down buttons on numberfields that don't need them ---*/
+
+input[type=number].sheet-ref::-webkit-inner-spin-button,
+input[type=number].sheet-ref::-webkit-outer-spin-button,
+input[type=number].sheet-txtfield::-webkit-inner-spin-button,
+input[type=number].sheet-txtfield::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number].sheet-ref,
+input[type=number].sheet-txtfield {
+    -moz-appearance: textfield;
+}
+
+/* ------- Buttons ---------- */
+
+button[type="roll"]:not(.sheet-small) {
+    color: black;
+    height: 20px;
+    width: 20px;
+    margin-left: 15px;
+}
+
+button[type="roll"]:not(.sheet-small)::before {
+    font-size: 1.4em;
+}
+
+
+/*-----------------------------------------------------------------*\
+  #SECTIONS
+\*-----------------------------------------------------------------*/
+
+
+/* --------- General Section Styling ------------- */
+.sheet-flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.sheet-flex-middle {
+    display: flex;
+    justify-content: center;
+}
+
+.sheet-flex-down {
+    flex-flow: column nowrap;
+}
+
+.sheet-section {
+    padding: 5px;
+    min-height: 90%;
+}
+
+
+/*  ----- Character Sheet Structure -------
+
+'.sheet-main' defines the sheet's general structure and dimensions using CSS Grid.
+
+It uses 'Grid template areas' to name  each sheet section,
+so that they can be positioned in the grid easily,
+ while also providing a human-readable overview. */
+div.sheet-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1.5fr 1.5fr;
+    grid-template-areas:"logo   name"
 							"description  etats"
 							"description  aptitudes"
 							"description  aptitudes";
-		grid-gap: 3px;
-		width:    800px; /* Defines the width and height of the sheet */
-		height:   1000px;
-		background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLborder.jpg?raw=true);
-		background-size: 800px 1000px; /* Sets the sheet border image to same size as sheet */
-		background-repeat: no-repeat;
-	  }
+    grid-gap: 3px;
+    width: 800px; /* Defines the width and height of the sheet */
+    height: 1000px;
+    background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLborder.jpg?raw=true);
+    background-size: 800px 1000px; /* Sets the sheet border image to same size as sheet */
+    background-repeat: no-repeat;
+}
 
-	  /* Section-specific CSS is written in a way that removes the need to define classes
-	  on each individual   */
+/* Section-specific CSS is written in a way that removes the need to define classes
+on each individual   */
 
-	  /* LOGO SECTION */
+/* LOGO SECTION */
 
-	  div.sheet-logo{
-		grid-area: logo;
-		background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/logo.png);
-		background-size: 200px 200px;
-		background-repeat: no-repeat;
-		display: flex;
-		justify-content:flex-start;
-		align-items:flex-start;
-		flex-flow: column;
-	  	background-position-y: -30px;
-		background-position-x: center;
-	  }
+div.sheet-logo {
+    grid-area: logo;
+    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/logo.png);
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column;
+    background-position-y: -30px;
+    background-position-x: center;
+}
 
-	  div.sheet-logo span{
-		font-size: 15px;
-		background-color: white;
-		border: 2px solid black;
-	  }
-	  div.sheet-logo h2
-	  {
-		padding-left: 10%;
-		padding-top: 50%;
-	  }
+div.sheet-logo span {
+    font-size: 15px;
+    background-color: white;
+    border: 2px solid black;
+}
 
-	  /* NAME SECTION */
+div.sheet-logo h2 {
+    padding-left: 10%;
+    padding-top: 50%;
+}
 
-	  div.sheet-name{
-		grid-area: name;
-		background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Part.png);
-		background-repeat: no-repeat;
-		background-size: 573px 188px;
-		background-position-y: 10px;
-		padding-top: 10px;
-		display: grid; /* the grid that contain the 3 aptitude */
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr;
-		grid-gap: 5px;
-	  }
+/* NAME SECTION */
 
-	  div.sheet-name div.sheet-section-small{
-		background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLblock1.jpg?raw=true);
-		background-size: contain;
-		background-repeat: no-repeat;
-		height: 30px;
-		width: 200px;
-	  }
+div.sheet-name {
+    grid-area: name;
+    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Part.png);
+    background-repeat: no-repeat;
+    background-size: 573px 188px;
+    background-position-y: 10px;
+    padding-top: 10px;
+    display: grid; /* the grid that contain the 3 aptitude */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 5px;
+}
 
-	  div.sheet-name label{
-		width: 30px;
-		padding-left: 15px;
-	  }
+div.sheet-name div.sheet-section-small {
+    background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLblock1.jpg?raw=true);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 200px;
+}
 
-	  div.sheet-name input[type="text"]{
-		width: 100px;
-	  }
-	  div.sheet-name input[type="checkbox"]{
-		width: 50px;
-	  }
+div.sheet-name label {
+    width: 30px;
+    padding-left: 15px;
+}
 
+div.sheet-name input[type="text"] {
+    width: 100px;
+}
 
-	/* ETATS SECTION */
-	div.sheet-etats {
-		background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Part.png);
-		background-repeat: no-repeat;
-		background-size: 575px 195px;
-		grid-area: etats;
-		display: grid;
-		padding-right: 10%;
-		width: 560px;
-		margin-right: 20px;
-		grid-template-columns: 1fr 1fr 1fr 0.7fr;
-		grid-template-rows: 0.8fr 1fr 1.5fr;
-		grid-gap: 5px;
-	  }
-	  div.sheet-etats div.sheet-section-stat{
-		background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/square_sta_newt.png);
-		background-size: 105px 45px;
-		background-repeat: no-repeat;
-		background-position-x: 90%;
-		background-position-y: center;
-	  }
-
-	  div.sheet-etats label{
-		width: auto;
-		margin-top: 3px;
-		margin-right: auto;
-		padding-right: 5px;
-	  }
-	  div.sheet-etats input[type="number"] {
-		margin-right: 5%;
-		margin-left: 0px;
-
-	  }
+div.sheet-name input[type="checkbox"] {
+    width: 50px;
+}
 
 
-	  /* APTITUDES SECTION */
-	  div.sheet-aptitudes{
-		  grid-area: aptitudes;
-		  background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
-		  background-repeat: no-repeat;
-		  background-size: 470px 585px;
-		  padding-left: 15px;
-		  padding-top: 20px;
-		  display: grid; /* the grid that contain the 3 aptitude */
-		  grid-template-columns: 1fr;
-		  grid-template-rows: 0.2fr 1fr 0.2fr 1fr 0.2fr 1fr;
-		  grid-gap: 1px;
-	  }
-	  div.sheet-aptitudes div.sheet-section-small{
-		background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLblock1.jpg?raw=true);
-		background-size:200px  30px ;
-		background-repeat: no-repeat;
-		height: 30px;
-		width: 200px;
-	  }
+/* ETATS SECTION */
+div.sheet-etats {
+    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Part.png);
+    background-repeat: no-repeat;
+    background-size: 575px 195px;
+    grid-area: etats;
+    display: grid;
+    padding-right: 10%;
+    width: 560px;
+    margin-right: 20px;
+    grid-template-columns: 0.7fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 1.5fr;
+    grid-gap: 5px;
+}
+
+div.sheet-etats div.sheet-section-stat {
+    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/square_sta_newt.png);
+    background-size: 105px 45px;
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+    background-position-y: center;
+}
+
+div.sheet-etats label {
+    width: auto;
+    margin-top: 3px;
+    margin-right: auto;
+    padding-right: 5px;
+}
+
+div.sheet-section-stat input[type="number"] {
+    margin-right: 5%;
+    margin-left: 0;
+}
+
+div.sheet-base-stat {
+    margin-left: 46px;
+}
+div.sheet-base-stat input[type="number"]{
+    margin-left: 5px;
+}
 
 
-	  div.sheet-aptitudes div.sheet-section-big{
 
-		height: 150px;
-		width: 420px;
-		padding-left: 9px;
-		padding-top: 1px;
-		display: grid; /* the grid with all sub-attribute */
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr ;
-	  }
-	  div.sheet-aptitudes div.sheet-section-very-small{
-		background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLblock1.jpg?raw=true);
-		background-size:165px  30px ;
-		background-repeat: no-repeat;
-		height: 30px;
-		width: 165px;
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr ;
-	  }
-	  div.sheet-aptitudes label{
-		width: 80px;
-		padding-left: 10px;
-	  }
+/* APTITUDES SECTION */
+div.sheet-aptitudes {
+    grid-area: aptitudes;
+    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
+    background-repeat: no-repeat;
+    background-size: 470px 585px;
+    padding-left: 15px;
+    padding-top: 20px;
+    display: grid; /* the grid that contain the 3 aptitude */
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1fr 0.2fr 1fr 0.2fr 1fr;
+    grid-gap: 1px;
+}
+
+div.sheet-aptitudes div.sheet-section-small {
+    background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLblock1.jpg?raw=true);
+    background-size: 200px 30px;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 200px;
+}
 
 
-	/*DESCRIPTION SECTION */
+div.sheet-aptitudes div.sheet-section-big {
 
-	div.sheet-description {
+    height: 150px;
+    width: 420px;
+    padding-left: 9px;
+    padding-top: 1px;
+    display: grid; /* the grid with all sub-attribute */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
 
-		grid-area: description;
-		background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Vert.png);
-		background-size: 197px 788px;
-		background-repeat: no-repeat;
-		margin-left: 15px;
-	}
+div.sheet-aptitudes div.sheet-section-very-small {
+    background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLblock1.jpg?raw=true);
+    background-size: 165px 30px;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 165px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
 
-	div.sheet-description div.sheet-repeating_attaque {
-		margin-left: 20px;
-	}
-	div.sheet-description textarea{
-        margin-left: 4%;
-		height: 700px;
-	}
+div.sheet-aptitudes label {
+    width: 80px;
+    padding-left: 10px;
+}
 
-	div.sheet-description label
-	{
-		width: 80px;
-		padding-left: 10px;
-	}
+
+/*DESCRIPTION SECTION */
+
+div.sheet-description {
+
+    grid-area: description;
+    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Vert.png);
+    background-size: 197px 788px;
+    background-repeat: no-repeat;
+    margin-left: 15px;
+}
+
+div.sheet-description div.sheet-repeating_attaque {
+    margin-left: 20px;
+}
+
+div.sheet-description textarea {
+    margin-left: 4%;
+    height: 700px;
+}
+
+div.sheet-description label {
+    width: 80px;
+    padding-left: 10px;
+}
 
 /* _________________Capacité Sheet Structure ________________*/
 
 div.sheet-main_capacite {
-	display: grid;
-	grid-template-columns: 2fr 3fr;
-	grid-template-rows: 0.8fr 0.5fr 4fr;
-	grid-template-areas:"logo   faculte"
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 0.8fr 0.5fr 4fr;
+    grid-template-areas:"logo   faculte"
 						"argent  faculte"
 						"equipement faculte";
-	grid-gap: 3px;
-	width:    800px; /* Defines the width and height of the sheet */
-	height:   1000px;
-	background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLborder.jpg?raw=true);
-	background-size: 800px 1000px; /* Sets the sheet border image to same size as sheet */
-	background-repeat: no-repeat;
+    grid-gap: 3px;
+    width: 800px; /* Defines the width and height of the sheet */
+    height: 1000px;
+    background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLborder.jpg?raw=true);
+    background-size: 800px 1000px; /* Sets the sheet border image to same size as sheet */
+    background-repeat: no-repeat;
 }
 
-div.sheet-logo_capacite{
-	grid-area: logo;
-	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/logo.png);
-	background-size: 200px 200px;
-	background-repeat: no-repeat;
-	display: flex;
-	justify-content:flex-start;
-	align-items:flex-start;
-	flex-flow: column;
-	background-position-y: -30px;
-	background-position-x: 6px;
+div.sheet-logo_capacite {
+    grid-area: logo;
+    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/logo.png);
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column;
+    background-position-y: -30px;
+    background-position-x: 6px;
 }
 
-div.sheet-logo_capacite span{
-	font-size: 15px;
-	background-color: white;
-	border: 2px solid black;
-}
-div.sheet-logo_capacite h2
-{
-	padding-left: 14%;
-	padding-top: 32%;
+div.sheet-logo_capacite span {
+    font-size: 15px;
+    background-color: white;
+    border: 2px solid black;
 }
 
-div.sheet-faculte_capacite
-{
-	grid-area: faculte;
-	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
-	background-repeat: no-repeat;
-	background-position-y: 25px;
+div.sheet-logo_capacite h2 {
+    padding-left: 14%;
+    padding-top: 32%;
+}
+
+div.sheet-faculte_capacite {
+    grid-area: faculte;
+    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
+    background-repeat: no-repeat;
+    background-position-y: 25px;
     background-size: 470px 970px;
-	padding-right: 5%;
-	padding-top: 7%;
-	padding-left: 3%;
+    padding-right: 5%;
+    padding-top: 7%;
+    padding-left: 3%;
 }
-div.sheet-main_capacite h3
-{
+
+div.sheet-main_capacite h3 {
     padding-left: 30%;
 }
 
 
-div.sheet-faculte_capacite input[type="text"]
-{
-	background-color: transparent;
-	border-style: outset outset outset outset;
-	border-color: grey;
-	border-radius: 25px;
+div.sheet-faculte_capacite input[type="text"] {
+    background-color: transparent;
+    border-style: outset outset outset outset;
+    border-color: grey;
+    border-radius: 25px;
 }
+
 div.sheet-faculte_capacite input[type="text"].sheet-small {
     width: 50px;
 }
 
-div.sheet-faculte_capacite textarea
-{
-	resize: vertical;
-	width: 95%;
+div.sheet-faculte_capacite textarea {
+    resize: vertical;
+    width: 95%;
 }
 
-div.sheet-faculte_capacite select
-{
-	width: 15%;
+div.sheet-faculte_capacite select {
+    width: 15%;
 }
 
-div.sheet-faculte_capacite input[type="number"]
-{
-	margin-left: 0%;
+div.sheet-faculte_capacite input[type="number"] {
+    margin-left: 0%;
 }
-div.sheet-argent_capacite
-{
-	grid-area: argent;
-	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
-	background-size: 300px 90px;
-	background-repeat: no-repeat;
-	background-position-x :100%;
+
+div.sheet-argent_capacite {
+    grid-area: argent;
+    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
+    background-size: 300px 90px;
+    background-repeat: no-repeat;
+    background-position-x: 100%;
     padding-left: 30px;
 }
 
-div.sheet-argent_capacite input[type="number"]
-{
-	width: 25%;
-	height: 35%;
-	font-size: x-large;
+div.sheet-argent_capacite input[type="number"] {
+    width: 25%;
+    height: 35%;
+    font-size: x-large;
 }
 
-div.sheet-equipement_capacite
-{
-	grid-area: equipement;
-	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
-	background-size: 307px 740px;
-	background-repeat: no-repeat;
-	background-position-x: 11px ;
-	padding-left: 6%;
-	padding-right: 3%;
+div.sheet-equipement_capacite {
+    grid-area: equipement;
+    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
+    background-size: 307px 740px;
+    background-repeat: no-repeat;
+    background-position-x: 11px;
+    padding-left: 6%;
+    padding-right: 3%;
 }
 
-div.sheet-equipement_capacite input[type="text"]
-{
-	background-color: transparent;
-	border-style: outset outset outset outset;
-	border-color: grey;
-	border-radius: 25px;
+div.sheet-equipement_capacite input[type="text"] {
+    background-color: transparent;
+    border-style: outset outset outset outset;
+    border-color: grey;
+    border-radius: 25px;
 }
-div.sheet-equipement_capacite textarea
-{
-	resize: vertical;
+
+div.sheet-equipement_capacite textarea {
+    resize: vertical;
     width: 95%;
 }
+
 /* _________________Sorts-Dons Sheet Structure ________________*/
 
-div.sheet-main_sorts-dons
-{
-	display: grid;
-	grid-template-columns: 0.7fr 2fr;
-	grid-template-rows: 0.5fr 1fr 2fr;
+div.sheet-main_sorts-dons {
+    display: grid;
+    grid-template-columns: 0.7fr 2fr;
+    grid-template-rows: 0.5fr 1fr 2fr;
 
-	grid-template-areas: "logo   text1"
+    grid-template-areas: "logo   text1"
 						 "text2  text2"
 						 "text3  text3";
-	grid-gap: 3px;
-	width: 800px;
-	height: 1000px;
-	background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLborder.jpg?raw=true);
-	background-size: 800px 1000px; /* Sets the sheet border image to same size as sheet */
-	background-repeat: no-repeat;
-}
-div.sheet-logo_sorts-dons{
-	grid-area: logo;
-	background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/logo.png);
-	background-size: 200px 200px;
-	background-repeat: no-repeat;
-	display: flex;
-	justify-content:flex-start;
-	align-items:flex-start;
-	flex-flow: column;
-  	background-position-y: -30px;
-	background-position-x: center;
-  }
-  div.sheet-logo_sorts-dons span{
-	font-size: 15px;
-	background-color: white;
-	border: 2px solid black;
+    grid-gap: 3px;
+    width: 800px;
+    height: 1000px;
+    background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLborder.jpg?raw=true);
+    background-size: 800px 1000px; /* Sets the sheet border image to same size as sheet */
+    background-repeat: no-repeat;
 }
 
-div.sheet-logo_sorts-dons h2
-{
-	padding-left: 14%;
-	padding-top: 50%
-}
-div.sheet-text1_sorts-dons
-{
-	grid-area: text1;
-}
-div.sheet-text1_sorts-dons  textarea
-{
-	margin-left: 5%;
-	margin-top: 3%;
-	width: 90%;
-	height: 85%;
-}
-div.sheet-text2_sorts-dons
-{
-	grid-area: text2;
+div.sheet-logo_sorts-dons {
+    grid-area: logo;
+    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/logo.png);
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column;
+    background-position-y: -30px;
+    background-position-x: center;
 }
 
-div.sheet-text2_sorts-dons  textarea
-{
-	margin-left: 5%;
-	margin-top: 1%;
-	width: 90%;
-	height: 80%;
+div.sheet-logo_sorts-dons span {
+    font-size: 15px;
+    background-color: white;
+    border: 2px solid black;
 }
 
-div.sheet-text3_sorts-dons
-{
-	grid-area: text3;
+div.sheet-logo_sorts-dons h2 {
+    padding-left: 14%;
+    padding-top: 50%
 }
 
-div.sheet-text3_sorts-dons  textarea
-{
-	margin-left: 5%;
+div.sheet-text1_sorts-dons {
+    grid-area: text1;
+}
 
-	width: 90%;
-	height: 95%;
+div.sheet-text1_sorts-dons textarea {
+    margin-left: 5%;
+    margin-top: 3%;
+    width: 90%;
+    height: 85%;
+}
+
+div.sheet-text2_sorts-dons {
+    grid-area: text2;
+}
+
+div.sheet-text2_sorts-dons textarea {
+    margin-left: 5%;
+    margin-top: 1%;
+    width: 90%;
+    height: 80%;
+}
+
+div.sheet-text3_sorts-dons {
+    grid-area: text3;
+}
+
+div.sheet-text3_sorts-dons textarea {
+    margin-left: 5%;
+
+    width: 90%;
+    height: 95%;
 }

@@ -1,382 +1,392 @@
 <!--Button for Tabs -->
 <div>
-	<button type="action" name="act_character">Character</button>
-	<button type="action" name="act_capacite">Capacité</button>
-	<button type="action" name="act_sorts-dons">Sorts_Dons</button>
+    <button type="action" name="act_character">Character</button>
+    <button type="action" name="act_capacite">Capacité</button>
+    <button type="action" name="act_sorts-dons">Sorts_Dons</button>
 </div>
 <input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab' value='character'/>
 <div class='sheet-character'>
-	<div class="main">
-		<!-- LOGO SECTION -->
-		<div class="logo section">
-			<h2>Fiche de Personnage</h2>
-		</div>
+    <div class="main">
+        <!-- LOGO SECTION -->
+        <div class="logo section">
+            <h2>Fiche de Personnage</h2>
+        </div>
 
-		<!-- NAME SECTION-->
-		<div class="name section">
-			<div class="Void_1 section">
+        <!-- NAME SECTION-->
+        <div class="name section">
+            <div class="Void_1 section">
 
-			</div>
-			<div class="Name section">
-				<h2>Name</h2>
-			</div>
-			<div class="Void section">
+            </div>
+            <div class="Name section">
+                <h2>Name</h2>
+            </div>
+            <div class="Void section">
 
-			</div>
+            </div>
 
-			<div class="section-small flex-center">
-				<label>NOM: </label>
-				<input name="attr_character_name" type="text">
-			</div>
-			<div class="section-small flex-center">
-				<label>AGE: </label>
-				<input name="attr_character_age" type="text">
-			</div>
-			<h2></h2>
-			<div class="section-box flex-down">
-				<h4>Bonus_divin: <input type="checkbox" name="attr_is_bonus_divin" value="1" checked></h4>
-				<h4>Avantage: <input type="checkbox" name="attr_is_avantage" value="1"></h4>
-				<h4>Desavantage: <input type="checkbox" name="attr_is_desavantage" value="1"></h4>
-			</div>
-			<div>
-				<label>Modificateur_jet:</label>
-				<input name="attr_modif_jet" type="number" value="0">
-			</div>
+            <div class="section-small flex-center">
+                <label>NOM: </label>
+                <input name="attr_character_name" type="text">
+            </div>
+            <div class="section-small flex-center">
+                <label>AGE: </label>
+                <input name="attr_character_age" type="text">
+            </div>
+            <h2></h2>
+            <div class="section-box flex-down">
+                <h4>Bonus_divin: <input type="checkbox" name="attr_is_bonus_divin" value="1" checked></h4>
+                <h4>Avantage: <input type="checkbox" name="attr_is_avantage" value="1"></h4>
+                <h4>Desavantage: <input type="checkbox" name="attr_is_desavantage" value="1"></h4>
+            </div>
+            <div>
+                <label>Modificateur_jet:</label>
+                <input name="attr_modif_jet" type="number" value="0">
+            </div>
 
-			<div class="section-box flex-down">
-				<label>Initiative:</label>
-				<button type="roll" name="roll_initiative"
-						value="&{template:default} {{name=Initiative}} {{Roll=[[d10+@{mobilite} &{tracker}]]}}"></button>
-			</div>
+            <div class="section-box flex-down">
+                <label>Initiative:</label>
+                <button type="roll" name="roll_initiative"
+                        value="&{template:default} {{name=Initiative}} {{Roll=[[d10+@{mobilite} &{tracker}]]}}"></button>
+            </div>
 
-		</div>
-		<!-- ETATS SECTION-->
-		<div class="etats section">
+        </div>
+        <!-- ETATS SECTION-->
+        <div class="etats section">
+            <div class="Name section">
+                <h2>Etats</h2>
+            </div>
+            <div class="section-stat flex-center">
+                <label>PV:</label>
+                <input name="attr_pv" type="number" value="0">
+                <input name="attr_pv_max" type="number" value="0">
+            </div>
+            <div class="section-stat flex-center">
+                <label>Malf:</label>
+                <input name="attr_malf" type="number" value="0">
+                <input name="attr_malf_max" type="number" value="0">
+            </div>
+            <div class="section-stat flex-center">
+                <label>Vig:</label>
+                <input name="attr_vigueur" type="number" value="0">
+                <input name="attr_vigueur_max" type="number" value="0">
+            </div>
+            <h2></h2>
+            <div class="base-stat flex-center">
+                <label>Base: <input name="attr_pv_base" type="number"
+                                    value="(@{physique} + (@{constitution} * 5)) * 2 +25" disabled="true"></label>
+            </div>
+            <div class="base-stat flex-center">
+                <label>Base: <input name="attr_malf_base" type="number"
+                                    value="(@{mental} + @{concentration} ) *2 + (@{social} + @{charisme} ) * 2 +20"
+                                    disabled="true"></label>
+            </div>
+            <div class="base-stat flex-center">
+                <label>Base:<input name="attr_vigueur_base" type="number"
+                                   value="(@{physique} + @{athletisme}) * 2 + ( @{mental} * @{concentration} ) * 2 + 10"
+                                   disabled="true"></label>
+            </div>
+            <div>
+                <label>Armure Phy:</label>
+                <h5>Ajout : <input name="attr_ajout_armure" type="number" value="0"></h5>
+                <h5>Total : <input name="attr_armure" type="number" value="@{ajout_armure}"
+                                   disabled="true"></h5>
+            </div>
+            <div>
+                <label>Armure Ment:</label>
+                <h5>Ajout : <input name="attr_ajout_armure_ment" type="number" value="0"></h5>
+                <h5>Total : <input name="attr_armure_ment" type="number"
+                                   value="@{resistance_mental}+@{ajout_armure_ment}" disabled="true"></h5>
+            </div>
+            <div>
+                <label>Réactivité:</label>
+                <h5>Ajout : <input name="attr_ajout_reactivite" type="number" value="0"></h5>
+                <h5>Total : <input name="attr_reactivite" type="number"
+                                   value="1+floor(@{dexterite}/2)+@{ajout_reactivite}"
+                                   disabled="true"></h5>
+            </div>
+            <div>
+                <label>Mobilité:</label>
+                <h5>Ajout : <input name="attr_ajout_mobilite" type="number" value="0"></h5>
+                <h5>Total : <input name="attr_mobilite" type="number" value="5 + @{athletisme}+@{ajout_mobilite}"
+                                   disabled="true"></h5>
+            </div>
+        </div>
+        <!--DESCRIPTION SECTION -->
+        <div class="description section">
+            <h2>Description</h2>
+            <textarea name="attr_notes"></textarea>
+        </div>
+        <!-- APTITUDES SECTION -->
+        <div class="aptitudes section">
+            <h2>Aptitudes</h2>
+            <div class="section-small flex-center">
+                <label>PHYSIQUE: </label> <!-- Physique-->
+                <input name="attr_physique" type="number" value="1">
+            </div>
+            <div class="section-big flex-center">
+                <div class="section-very-small flex-center">
+                    <label>Dexterité: </label>
+                    <input name="attr_dexterite" type="number" value="0">
+                    <button name="roll_dexterite" type="roll"
+                            value="&{template:default} {{name=Dexterite}} {{Result=[[ ((@{dexterite} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6  + @{physique} ]] }}"></button>
 
-			<h2></h2>
-			<div class="Name section">
-				<h2>Etats</h2>
-			</div>
-			<h2>
-			</h2>
-			<h2></h2>
-			<div class="section-stat flex-center">
-				<label>PV:</label>
-				<input name="attr_pv" type="number" value="0">
-				<input name="attr_pv_max" type="number" value="0">
-			</div>
-			<div class="section-stat flex-center">
-				<label>Malf:</label>
-				<input name="attr_malf" type="number" value="0">
-				<input name="attr_malf_max" type="number" value="0">
-			</div>
-			<div class="section-stat flex-center">
-				<label>Vig:</label>
-				<input name="attr_vigueur" type="number" value="0">
-				<input name="attr_vigueur_max" type="number" value="0">
-			</div>
-			<h2></h2>
-			<div>
-				<label>Armure Phy:</label>
-				<h5>Ajout : <input name="attr_ajout_armure" type="number" value="0"></h5>
-				<h5>Total : <input name="attr_armure" type="number" value="@{ajout_armure}"
-								   disabled="true"></h5>
-			</div>
-			<div>
-				<label>Armure Ment:</label>
-				<h5>Ajout : <input name="attr_ajout_armure_ment" type="number" value="0"></h5>
-				<h5>Total : <input name="attr_armure_ment" type="number"
-								   value="@{resistance_mental}+@{ajout_armure_ment}" disabled="true"></h5>
-			</div>
-			<div>
-				<label>Réactivité:</label>
-				<h5>Ajout : <input name="attr_ajout_reactivite" type="number" value="0"></h5>
-				<h5>Total : <input name="attr_reactivite" type="number" value="1+floor(@{dexterite}/2)+@{ajout_reactivite}"
-								   disabled="true"></h5>
-			</div>
-			<div>
-				<label>Mobilité:</label>
-				<h5>Ajout : <input name="attr_ajout_mobilite" type="number" value="0"></h5>
-				<h5>Total : <input name="attr_mobilite" type="number" value="5 + @{athletisme}+@{ajout_mobilite}"
-								   disabled="true"></h5>
-			</div>
-		</div>
-		<!--DESCRIPTION SECTION -->
-		<div class="description section">
-			<h2>Description</h2>
-			<textarea name="attr_notes"></textarea>
-		</div>
-		<!-- APTITUDES SECTION -->
-		<div class="aptitudes section">
-			<h2>Aptitudes</h2>
-			<div class="section-small flex-center">
-				<label>PHYSIQUE: </label> <!-- Physique-->
-				<input name="attr_physique" type="number" value="1">
-			</div>
-			<div class="section-big flex-center">
-				<div class="section-very-small flex-center">
-					<label>Dexterité: </label>
-					<input name="attr_dexterite" type="number" value="0">
-					<button name="roll_dexterite" type="roll"
-							value="&{template:default} {{name=Dexterite}} {{Result=[[ ((@{dexterite} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6  + @{physique} ]] }}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Const: </label>
+                    <input name="attr_constitution" type="number" value="0">
+                    <button name="roll_constitution" type="roll"
+                            value="&{template:default} {{name=Constitution}} {{Result=[[ ((@{constitution} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
 
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Const: </label>
-					<input name="attr_constitution" type="number" value="0">
-					<button name="roll_constitution" type="roll"
-							value="&{template:default} {{name=Constitution}} {{Result=[[ ((@{constitution} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
-
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Visée: </label>
-					<input name="attr_visee" type="number" value="0">
-					<button name="roll_visee" type="roll"
-							value="&{template:default} {{name=Visee}} {{Result=[[ ((@{visee} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Mélée: </label>
-					<input name="attr_melee" type="number" value="0">
-					<button name="roll_melee" type="roll"
-							value="&{template:default} {{name=Melee}} {{Result=[[ ((@{melee} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Athletisme: </label>
-					<input name="attr_athletisme" type="number" value="0">
-					<button name="roll_athletisme" type="roll"
-							value="&{template:default} {{name=Athletisme}} {{Result=[[ ((@{athletisme} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Discretion: </label>
-					<input name="attr_discretion" type="number" value="0">
-					<button name="roll_discretion" type="roll"
-							value="&{template:default} {{name=Discretion}} {{Result=[[ ((@{discretion} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Force: </label>
-					<input name="attr_force" type="number" value="0">
-					<button name="roll_force" type="roll"
-							value="&{template:default} {{name=Force}} {{Result=[[ ((@{force} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
-				</div>
-			</div>
-			<div class="section-small flex-center">
-				<label>SOCIAL: </label> <!-- Social-->
-				<input name="attr_social" type="number" value="1">
-			</div>
-			<div class="section-big flex-center">
-				<div class="section-very-small flex-center">
-					<label>Intimidation: </label>
-					<input name="attr_intimidation" type="number" value="0">
-					<button name="roll_intimidation" type="roll"
-							value="&{template:default} {{name=Intimidation}} {{Result=[[ ((@{intimidation} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Charisme: </label>
-					<input name="attr_charisme" type="number" value="0">
-					<button name="roll_charisme" type="roll"
-							value="&{template:default} {{name=Charisme}} {{Result=[[ ((@{charisme} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Identification: </label>
-					<input name="attr_identification" type="number" value="0">
-					<button name="roll_indentification" type="roll"
-							value="&{template:default} {{name=Identification}} {{Result=[[ ((@{identification} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Imposture: </label>
-					<input name="attr_imposture" type="number" value="0">
-					<button name="roll_imposture" type="roll"
-							value="&{template:default} {{name=Imposture}} {{Result=[[ ((@{imposture} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Connaissance: </label>
-					<input name="attr_connaissance" type="number" value="0">
-					<button name="roll_connaissance" type="roll"
-							value="&{template:default} {{name=Connaissance}} {{Result=[[ ((@{connaissance} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Survie: </label>
-					<input name="attr_survie" type="number" value="0">
-					<button name="roll_survie" type="roll"
-							value="&{template:default} {{name=Survie}} {{Result=[[ ((@{survie} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Loyauté: </label>
-					<input name="attr_loyaute" type="number" value="0">
-					<button name="roll_loyaute" type="roll"
-							value="&{template:default} {{name=Loyaute}} {{Result=[[ ((@{loyaute} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
-				</div>
-			</div>
-			<div class="section-small flex-center">
-				<label>MENTAL: </label> <!-- Social-->
-				<input name="attr_mental" type="number" value="1">
-			</div>
-			<div class="section-big flex-center">
-				<div class="section-very-small flex-center">
-					<label>Recherche: </label>
-					<input name="attr_recherche" type="number" value="0">
-					<button name="roll_recherche" type="roll"
-							value="&{template:default} {{name=Recherche}} {{Result=[[ ((@{recherche} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Perception: </label>
-					<input name="attr_perception" type="number" value="0">
-					<button name="roll_perception" type="roll"
-							value="&{template:default} {{name=Perception}} {{Result=[[ ((@{perception} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Resistance_M: </label>
-					<input name="attr_resistance_mental" type="number" value="0">
-					<button name="roll_resistance_mental" type="roll"
-							value="&{template:default} {{name=Resistance_Mental}} {{Result=[[ ((@{resistance_mental} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Concentration: </label>
-					<input name="attr_concentration" type="number" value="0">
-					<button name="roll_concentration" type="roll"
-							value="&{template:default} {{name=Concentration}} {{Result=[[ ((@{concentration} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
-				</div>
-				<div class="section-very-small flex-center">
-					<label>Analyse: </label>
-					<input name="attr_analyse" type="number" value="0">
-					<button name="roll_analyse" type="roll"
-							value="&{template:default} {{name=Analyse}} {{Result=[[ (((@{analyse} + @{is_bonus_divin} + @{modif_jet})) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
-				</div>
-			</div>
-		</div>
-	</div>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Visée: </label>
+                    <input name="attr_visee" type="number" value="0">
+                    <button name="roll_visee" type="roll"
+                            value="&{template:default} {{name=Visee}} {{Result=[[ ((@{visee} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Mélée: </label>
+                    <input name="attr_melee" type="number" value="0">
+                    <button name="roll_melee" type="roll"
+                            value="&{template:default} {{name=Melee}} {{Result=[[ ((@{melee} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Athletisme: </label>
+                    <input name="attr_athletisme" type="number" value="0">
+                    <button name="roll_athletisme" type="roll"
+                            value="&{template:default} {{name=Athletisme}} {{Result=[[ ((@{athletisme} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Discretion: </label>
+                    <input name="attr_discretion" type="number" value="0">
+                    <button name="roll_discretion" type="roll"
+                            value="&{template:default} {{name=Discretion}} {{Result=[[ ((@{discretion} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Force: </label>
+                    <input name="attr_force" type="number" value="0">
+                    <button name="roll_force" type="roll"
+                            value="&{template:default} {{name=Force}} {{Result=[[ ((@{force} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
+                </div>
+            </div>
+            <div class="section-small flex-center">
+                <label>SOCIAL: </label> <!-- Social-->
+                <input name="attr_social" type="number" value="1">
+            </div>
+            <div class="section-big flex-center">
+                <div class="section-very-small flex-center">
+                    <label>Intimidation: </label>
+                    <input name="attr_intimidation" type="number" value="0">
+                    <button name="roll_intimidation" type="roll"
+                            value="&{template:default} {{name=Intimidation}} {{Result=[[ ((@{intimidation} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Charisme: </label>
+                    <input name="attr_charisme" type="number" value="0">
+                    <button name="roll_charisme" type="roll"
+                            value="&{template:default} {{name=Charisme}} {{Result=[[ ((@{charisme} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Identification: </label>
+                    <input name="attr_identification" type="number" value="0">
+                    <button name="roll_indentification" type="roll"
+                            value="&{template:default} {{name=Identification}} {{Result=[[ ((@{identification} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Imposture: </label>
+                    <input name="attr_imposture" type="number" value="0">
+                    <button name="roll_imposture" type="roll"
+                            value="&{template:default} {{name=Imposture}} {{Result=[[ ((@{imposture} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Connaissance: </label>
+                    <input name="attr_connaissance" type="number" value="0">
+                    <button name="roll_connaissance" type="roll"
+                            value="&{template:default} {{name=Connaissance}} {{Result=[[ ((@{connaissance} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Survie: </label>
+                    <input name="attr_survie" type="number" value="0">
+                    <button name="roll_survie" type="roll"
+                            value="&{template:default} {{name=Survie}} {{Result=[[ ((@{survie} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Loyauté: </label>
+                    <input name="attr_loyaute" type="number" value="0">
+                    <button name="roll_loyaute" type="roll"
+                            value="&{template:default} {{name=Loyaute}} {{Result=[[ ((@{loyaute} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
+                </div>
+            </div>
+            <div class="section-small flex-center">
+                <label>MENTAL: </label> <!-- Social-->
+                <input name="attr_mental" type="number" value="1">
+            </div>
+            <div class="section-big flex-center">
+                <div class="section-very-small flex-center">
+                    <label>Recherche: </label>
+                    <input name="attr_recherche" type="number" value="0">
+                    <button name="roll_recherche" type="roll"
+                            value="&{template:default} {{name=Recherche}} {{Result=[[ ((@{recherche} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Perception: </label>
+                    <input name="attr_perception" type="number" value="0">
+                    <button name="roll_perception" type="roll"
+                            value="&{template:default} {{name=Perception}} {{Result=[[ ((@{perception} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Resistance_M: </label>
+                    <input name="attr_resistance_mental" type="number" value="0">
+                    <button name="roll_resistance_mental" type="roll"
+                            value="&{template:default} {{name=Resistance_Mental}} {{Result=[[ ((@{resistance_mental} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Concentration: </label>
+                    <input name="attr_concentration" type="number" value="0">
+                    <button name="roll_concentration" type="roll"
+                            value="&{template:default} {{name=Concentration}} {{Result=[[ ((@{concentration} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
+                </div>
+                <div class="section-very-small flex-center">
+                    <label>Analyse: </label>
+                    <input name="attr_analyse" type="number" value="0">
+                    <button name="roll_analyse" type="roll"
+                            value="&{template:default} {{name=Analyse}} {{Result=[[ (((@{analyse} + @{is_bonus_divin} + @{modif_jet})) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class='sheet-capacite'>
-	<div class="main_capacite">
-		<div class="logo_capacite section">
-			<h2>Capacités</h2>
-		</div>
-		<div class="argent_capacite section">
+    <div class="main_capacite">
+        <div class="logo_capacite section">
+            <h2>Capacités</h2>
+        </div>
+        <div class="argent_capacite section">
             <span>
                 Nombre de PO :
             </span>
-			<input type="number" name="attr_numbre_PO">
-			<br></br>
-			<br></br>
-			<span>
+            <input type="number" name="attr_numbre_PO">
+            <br></br>
+            <br></br>
+            <span>
                 Nombre de PA :
             </span>
-			<input type="number" name="attr_nombre_PA">
-		</div>
-		<div class="faculte_capacite section">
-			<h3>Facultés/Capacité</h3>
-			<fieldset class="repeating_attaque">
-				<input type="text" name="attr_name_capa" placeholder="Nom de la Capacité"/>
-				<button name="roll_attaque_capa" type="roll"
-						value="&{template:default} {{name=@{name_capa}}} {{Succès=[[ ( (@{sous_apti_dice_for_success_capa} + @{bonus_dice_for_success_capa} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + @{apti_value_for_success_capa} + @{bonus_value_for_success_capa} ]]}} {{Damage=[[(@{sous_apti_dice_for_degat_capa} + @{bonus_dice_for_degat_capa})d4s]]}} {{Action=@{action_capa}}}"
-						class="small"></button>
+            <input type="number" name="attr_nombre_PA">
+        </div>
+        <div class="faculte_capacite section">
+            <h3>Facultés/Capacité</h3>
+            <fieldset class="repeating_attaque">
+                <input type="text" name="attr_name_capa" placeholder="Nom de la Capacité"/>
+                <button name="roll_attaque_capa" type="roll"
+                        value="&{template:default} {{name=@{name_capa}}} {{Succès=[[ ( (@{sous_apti_dice_for_success_capa} + @{bonus_dice_for_success_capa} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + @{apti_value_for_success_capa} + @{bonus_value_for_success_capa} ]]}} {{Damage=[[(@{sous_apti_dice_for_degat_capa} + @{bonus_dice_for_degat_capa})d4s]]}} {{Action=@{action_capa}}}"
+                        class="small"></button>
 
-				<br></br>
-				<span>Succès:</span>
-				<select name="attr_sous_apti_dice_for_success_capa">
-					<option value="@{dexterite}">Dextérité</option>
-					<option value="@{constitution}">Constitution</option>
-					<option value="@{visee}">Visee</option>
-					<option value="@{melee}">Mélée</option>
-					<option value="@{athletisme}">Athletisme</option>
-					<option value="@{discretion}">Discretion</option>
-					<option value="@{force}">Force</option>
-					<option value="@{intimidation}">Intimidation</option>
-					<option value="@{charisme}">Charisme</option>
-					<option value="@{identification}">Identification</option>
-					<option value="@{imposture}">Imposture</option>
-					<option value="@{connaissance}">Connaissance</option>
-					<option value="@{survie}">Survie</option>
-					<option value="@{loyaute}">Loyauté</option>
-					<option value="@{recherche}">Recherche</option>
-					<option value="@{perception}">Perception</option>
-					<option value="@{resistance_mental}">Resistance_M</option>
-					<option value="@{concentration}">Concentration</option>
-					<option value="@{analyse}">Analyse</option>
-					<option value="0">--</option>
-				</select>
-				<span>+</span>
-				<input type="number" name="attr_bonus_dice_for_success_capa" value="0"/>
-				<span>d6 +</span>
-				<select name="attr_apti_value_for_success_capa">
-					<option value="@{physique}">Physique</option>
-					<option value="@{social}">Social</option>
-					<option value="@{mental}">Mental</option>
-					<option value="0">--</option>
-				</select>
-				<span>+</span>
-				<input type="number" name="attr_bonus_value_for_success_capa" value="0"/>
+                <br></br>
+                <span>Succès:</span>
+                <select name="attr_sous_apti_dice_for_success_capa">
+                    <option value="@{dexterite}">Dextérité</option>
+                    <option value="@{constitution}">Constitution</option>
+                    <option value="@{visee}">Visee</option>
+                    <option value="@{melee}">Mélée</option>
+                    <option value="@{athletisme}">Athletisme</option>
+                    <option value="@{discretion}">Discretion</option>
+                    <option value="@{force}">Force</option>
+                    <option value="@{intimidation}">Intimidation</option>
+                    <option value="@{charisme}">Charisme</option>
+                    <option value="@{identification}">Identification</option>
+                    <option value="@{imposture}">Imposture</option>
+                    <option value="@{connaissance}">Connaissance</option>
+                    <option value="@{survie}">Survie</option>
+                    <option value="@{loyaute}">Loyauté</option>
+                    <option value="@{recherche}">Recherche</option>
+                    <option value="@{perception}">Perception</option>
+                    <option value="@{resistance_mental}">Resistance_M</option>
+                    <option value="@{concentration}">Concentration</option>
+                    <option value="@{analyse}">Analyse</option>
+                    <option value="0">--</option>
+                </select>
+                <span>+</span>
+                <input type="number" name="attr_bonus_dice_for_success_capa" value="0"/>
+                <span>d6 +</span>
+                <select name="attr_apti_value_for_success_capa">
+                    <option value="@{physique}">Physique</option>
+                    <option value="@{social}">Social</option>
+                    <option value="@{mental}">Mental</option>
+                    <option value="0">--</option>
+                </select>
+                <span>+</span>
+                <input type="number" name="attr_bonus_value_for_success_capa" value="0"/>
 
-				<br></br>
-				<span>Dégât:</span>
-				<select name="attr_sous_apti_dice_for_degat_capa">
-					<option value="@{dexterite}">Dextérité</option>
-					<option value="@{constitution}">Constitution</option>
-					<option value="@{visee}">Visee</option>
-					<option value="@{melee}">Mélée</option>
-					<option value="@{athletisme}">Athletisme</option>
-					<option value="@{discretion}">Discretion</option>
-					<option value="@{force}">Force</option>
-					<option value="@{intimidation}">Intimidation</option>
-					<option value="@{charisme}">Charisme</option>
-					<option value="@{identification}">Identification</option>
-					<option value="@{imposture}">Imposture</option>
-					<option value="@{connaissance}">Connaissance</option>
-					<option value="@{survie}">Survie</option>
-					<option value="@{loyaute}">Loyauté</option>
-					<option value="@{recherche}">Recherche</option>
-					<option value="@{perception}">Perception</option>
-					<option value="@{resistance_mental}">Resistance_M</option>
-					<option value="@{concentration}">Concentration</option>
-					<option value="@{analyse}">Analyse</option>
-					<option value="0">--</option>
-				</select>
-				<span>+</span>
-				<input type="number" name="attr_bonus_dice_for_degat_capa" value="0"/>
-				<span>d4. </span>
-				<span>Action: </span>
-				<select name="attr_action_capa">
-					<option value="Grande Action">Grande Action</option>
-					<option value="Petite Action">Petite Action</option>
-					<option value="Un tour">Un tour</option>
-					<option value="--">--</option>
-				</select>
-				<textarea name="attr_description_capa"
-						  placeholder="Entrez la description de la capacité Ici"></textarea>
+                <br></br>
+                <span>Dégât:</span>
+                <select name="attr_sous_apti_dice_for_degat_capa">
+                    <option value="@{dexterite}">Dextérité</option>
+                    <option value="@{constitution}">Constitution</option>
+                    <option value="@{visee}">Visee</option>
+                    <option value="@{melee}">Mélée</option>
+                    <option value="@{athletisme}">Athletisme</option>
+                    <option value="@{discretion}">Discretion</option>
+                    <option value="@{force}">Force</option>
+                    <option value="@{intimidation}">Intimidation</option>
+                    <option value="@{charisme}">Charisme</option>
+                    <option value="@{identification}">Identification</option>
+                    <option value="@{imposture}">Imposture</option>
+                    <option value="@{connaissance}">Connaissance</option>
+                    <option value="@{survie}">Survie</option>
+                    <option value="@{loyaute}">Loyauté</option>
+                    <option value="@{recherche}">Recherche</option>
+                    <option value="@{perception}">Perception</option>
+                    <option value="@{resistance_mental}">Resistance_M</option>
+                    <option value="@{concentration}">Concentration</option>
+                    <option value="@{analyse}">Analyse</option>
+                    <option value="0">--</option>
+                </select>
+                <span>+</span>
+                <input type="number" name="attr_bonus_dice_for_degat_capa" value="0"/>
+                <span>d4. </span>
+                <span>Action: </span>
+                <select name="attr_action_capa">
+                    <option value="Grande Action">Grande Action</option>
+                    <option value="Petite Action">Petite Action</option>
+                    <option value="Un tour">Un tour</option>
+                    <option value="--">--</option>
+                </select>
+                <textarea name="attr_description_capa"
+                          placeholder="Entrez la description de la capacité Ici"></textarea>
 
-			</fieldset>
-		</div>
-		<div class="sheet-equipement_capacite section">
-			<h3>Equipements</h3>
-			<fieldset class="repeating_equipement">
-				<input type="text" name="attr_name_equip" placeholder="Nom">
-				<textarea name="attr_description_equip" placeholder="Descripion"></textarea>
-			</fieldset>
-		</div>
-	</div>
+            </fieldset>
+        </div>
+        <div class="sheet-equipement_capacite section">
+            <h3>Equipements</h3>
+            <fieldset class="repeating_equipement">
+                <input type="text" name="attr_name_equip" placeholder="Nom">
+                <textarea name="attr_description_equip" placeholder="Descripion"></textarea>
+            </fieldset>
+        </div>
+    </div>
 </div>
 <div class='sheet-sorts-dons'>
-	<div class="main_sorts-dons">
-		<div class="logo_sorts-dons section">
-			<h2>
-				Sorts et dons
-			</h2>
-		</div>
-		<div class="text1_sorts-dons section">
+    <div class="main_sorts-dons">
+        <div class="logo_sorts-dons section">
+            <h2>
+                Sorts et dons
+            </h2>
+        </div>
+        <div class="text1_sorts-dons section">
             <textarea name="attr_text1">
             </textarea>
-		</div>
+        </div>
 
-		<div class="text2_sorts-dons section">
+        <div class="text2_sorts-dons section">
             <textarea name="attr_text2">
             </textarea>
-		</div>
-		<div class="text3_sorts-dons section">
+        </div>
+        <div class="text3_sorts-dons section">
             <textarea name="attr_text3">
             </textarea>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 <script type="text/worker">
     const buttonlist = ["character","capacite","sorts-dons"];
@@ -387,6 +397,8 @@
             });
         });
     });
+
+
 
 
 
