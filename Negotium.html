@@ -79,7 +79,7 @@
 			<div>
 				<label>Armure Phy:</label>
 				<h5>Ajout : <input name="attr_ajout_armure" type="number" value="0"></h5>
-				<h5>Total : <input name="attr_armure" type="number" value="ceil(@{constitution}/2)+@{ajout_armure}"
+				<h5>Total : <input name="attr_armure" type="number" value="@{ajout_armure}"
 								   disabled="true"></h5>
 			</div>
 			<div>
@@ -89,9 +89,9 @@
 								   value="@{resistance_mental}+@{ajout_armure_ment}" disabled="true"></h5>
 			</div>
 			<div>
-				<label>Esquive:</label>
-				<h5>Ajout : <input name="attr_ajout_esquive" type="number" value="0"></h5>
-				<h5>Total : <input name="attr_esquive" type="number" value="1+floor(@{dexterite}/2)+@{ajout_esquive}"
+				<label>Réactivité:</label>
+				<h5>Ajout : <input name="attr_ajout_reactivite" type="number" value="0"></h5>
+				<h5>Total : <input name="attr_reactivite" type="number" value="1+floor(@{dexterite}/2)+@{ajout_reactivite}"
 								   disabled="true"></h5>
 			</div>
 			<div>
@@ -204,7 +204,7 @@
 					<label>Loyauté: </label>
 					<input name="attr_loyaute" type="number" value="0">
 					<button name="roll_loyaute" type="roll"
-							value="&{template:default} {{name=Survie}} {{Result=[[ ((@{loyaute} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
+							value="&{template:default} {{name=Loyaute}} {{Result=[[ ((@{loyaute} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
 				</div>
 			</div>
 			<div class="section-small flex-center">
