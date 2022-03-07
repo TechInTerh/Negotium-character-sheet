@@ -5,15 +5,16 @@
 .sheet-character,
 .sheet-capacite,
 .sheet-sorts-dons,
-.sheet-equipements {
+.sheet-inventaire {
     display: none;
 }
+
 
 /* show the selected tab */
 .sheet-tabstoggle[value="character"] ~ div.sheet-character,
 .sheet-tabstoggle[value="capacite"] ~ div.sheet-capacite,
 .sheet-tabstoggle[value="sorts-dons"] ~ div.sheet-sorts-dons,
-.sheet-tabstoggle[value="equipements"] ~ div.sheet-equipements {
+.sheet-tabstoggle[value="inventaire"] ~ div.sheet-inventaire {
     display: block;
 }
 
