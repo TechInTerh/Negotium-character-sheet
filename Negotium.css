@@ -4,14 +4,16 @@
 /*Configure the tab buttons*/
 .sheet-character,
 .sheet-capacite,
-.sheet-sorts-dons {
+.sheet-sorts-dons,
+.sheet-equipements {
     display: none;
 }
 
 /* show the selected tab */
 .sheet-tabstoggle[value="character"] ~ div.sheet-character,
 .sheet-tabstoggle[value="capacite"] ~ div.sheet-capacite,
-.sheet-tabstoggle[value="sorts-dons"] ~ div.sheet-sorts-dons {
+.sheet-tabstoggle[value="sorts-dons"] ~ div.sheet-sorts-dons,
+.sheet-tabstoggle[value="equipements"] ~ div.sheet-equipements {
     display: block;
 }
 
@@ -446,6 +448,10 @@ div.sheet-equipement_capacite input[type="text"] {
 div.sheet-equipement_capacite textarea {
     resize: vertical;
     width: 95%;
+}
+/* _______________ Equipemement Sheet Structure _______________ */
+div.sheet-main_equipements {
+    display: grid;
 }
 
 /* _________________Sorts-Dons Sheet Structure ________________*/

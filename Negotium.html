@@ -2,6 +2,7 @@
 <div>
     <button type="action" name="act_character">Character</button>
     <button type="action" name="act_capacite">Capacité</button>
+    <button type="action" name="act_equipements">Equipements</button>
     <button type="action" name="act_sorts-dons">Sorts_Dons</button>
 </div>
 <input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab' value='character'/>
@@ -388,8 +389,11 @@
         </div>
     </div>
 </div>
+<div class='sheet-equipements'>
+    <h2>Equip?</h2>
+</div>
 <script type="text/worker">
-    const buttonlist = ["character","capacite","sorts-dons"];
+    const buttonlist = ["character","capacite","sorts-dons","equipements"];
     buttonlist.forEach(button => {
         on(`clicked:${button}`, function() {
             setAttrs({
@@ -397,9 +401,5 @@
             });
         });
     });
-
-
-
-
 
 </script>
