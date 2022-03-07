@@ -454,11 +454,12 @@ div.sheet-equipement_capacite textarea {
 /* _______________ Equipemement Sheet Structure _______________ */
 div.sheet-main_inventaire {
     display: grid;
-    grid-template-columns: 1fr 3fr ;
-    grid-template-rows: 1fr 5fr;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: 1fr 3fr 3fr;
     grid-template-areas:
-            "logo money"
-            "Armes Armure";
+            "logo money gemmes"
+            "armes armes armure"
+            "tresors tresors tresors  ";
     width: 800px;
     height: 1000px;
     background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLborder.jpg?raw=true);
