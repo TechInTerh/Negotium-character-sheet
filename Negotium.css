@@ -4,8 +4,8 @@
 /*Configure the tab buttons*/
 .sheet-character,
 .sheet-capacite,
-.sheet-sorts-dons,
-.sheet-inventaire {
+.sheet-inventaire,
+.sheet-sorts-dons {
     display: none;
 }
 
@@ -13,8 +13,8 @@
 /* show the selected tab */
 .sheet-tabstoggle[value="character"] ~ div.sheet-character,
 .sheet-tabstoggle[value="capacite"] ~ div.sheet-capacite,
-.sheet-tabstoggle[value="sorts-dons"] ~ div.sheet-sorts-dons,
-.sheet-tabstoggle[value="inventaire"] ~ div.sheet-inventaire {
+.sheet-tabstoggle[value="inventaire"] ~ div.sheet-inventaire,
+.sheet-tabstoggle[value="sorts-dons"] ~ div.sheet-sorts-dons {
     display: block;
 }
 
@@ -251,10 +251,10 @@ div.sheet-section-stat input[type="number"] {
 div.sheet-base-stat {
     margin-left: 46px;
 }
-div.sheet-base-stat input[type="number"]{
+
+div.sheet-base-stat input[type="number"] {
     margin-left: 5px;
 }
-
 
 
 /* APTITUDES SECTION */
@@ -450,9 +450,36 @@ div.sheet-equipement_capacite textarea {
     resize: vertical;
     width: 95%;
 }
+
 /* _______________ Equipemement Sheet Structure _______________ */
-div.sheet-main_equipements {
+div.sheet-main_inventaire {
     display: grid;
+    grid-template-columns: 1fr 3fr ;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas:
+            "logo money"
+            "Armes Armure";
+    width: 800px;
+    height: 1000px;
+    background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLborder.jpg?raw=true);
+    background-size: 800px 1000px; /* Sets the sheet border image to same size as sheet */
+    background-repeat: no-repeat;
+}
+div.sheet-logo_inventaire {
+    grid-area: logo;
+    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/logo.png);
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column;
+    background-position-y: -30px;
+    background-position-x: center;
+}
+div.sheet-logo_inventaire h2 {
+    padding-left: 14%;
+    padding-top: 50%
 }
 
 /* _________________Sorts-Dons Sheet Structure ________________*/
