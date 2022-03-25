@@ -340,7 +340,7 @@ div.sheet-main_capacite {
     grid-template-columns: 2fr 3fr;
     grid-template-rows: 0.8fr 0.5fr 4fr;
     grid-template-areas:"logo   faculte"
-						"argent  faculte"
+						"_  faculte"
 						"equipement faculte";
     grid-gap: 3px;
     width: 800px; /* Defines the width and height of the sheet */
@@ -414,20 +414,6 @@ div.sheet-faculte_capacite input[type="number"] {
     margin-left: 0%;
 }
 
-div.sheet-argent_capacite {
-    grid-area: argent;
-    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
-    background-size: 300px 90px;
-    background-repeat: no-repeat;
-    background-position-x: 100%;
-    padding-left: 30px;
-}
-
-div.sheet-argent_capacite input[type="number"] {
-    width: 25%;
-    height: 35%;
-    font-size: x-large;
-}
 
 div.sheet-equipement_capacite {
     grid-area: equipement;
@@ -457,8 +443,8 @@ div.sheet-main_inventaire {
     grid-template-columns: 1fr 1fr 2fr;
     grid-template-rows: 1fr 3fr 3fr;
     grid-template-areas:
-            "logo money gemmes"
-            "armes armes armure"
+            "logo argent gemmes"
+            "armes armes armures"
             "tresors tresors tresors  ";
     width: 800px;
     height: 1000px;
@@ -466,6 +452,7 @@ div.sheet-main_inventaire {
     background-size: 800px 1000px; /* Sets the sheet border image to same size as sheet */
     background-repeat: no-repeat;
 }
+
 div.sheet-logo_inventaire {
     grid-area: logo;
     background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/logo.png);
@@ -478,9 +465,38 @@ div.sheet-logo_inventaire {
     background-position-y: -30px;
     background-position-x: center;
 }
+
 div.sheet-logo_inventaire h2 {
     padding-left: 14%;
     padding-top: 50%
+}
+
+div.sheet-argent_inventaire {
+    grid-area: argent;
+    background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
+    background-size: 180px 120px;
+    background-repeat: no-repeat;
+    background-position-x: 30%;
+    background-position-y: 50%;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+div.sheet-argent_inventaire input[type="number"] {
+    width: 30%;
+    height: 22%;
+    font-size: x-large;
+    margin-top: 5%;
+}
+
+div.sheet-gemmes_inventaire {
+
+}
+div.sheet-armes_inventaire {
+
+}
+div.sheet-armures_inventaire {
+
 }
 
 /* _________________Sorts-Dons Sheet Structure ________________*/
