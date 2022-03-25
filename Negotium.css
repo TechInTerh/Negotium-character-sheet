@@ -453,6 +453,19 @@ div.sheet-main_inventaire {
     background-repeat: no-repeat;
 }
 
+div.sheet-gemmes_inventaire {
+    grid-area: gemmes;
+}
+div.sheet-armes_inventaire {
+    grid-area: armes;
+}
+div.sheet-armures_inventaire {
+    grid-area: armures;
+}
+div.sheet-tresors_inventaire{
+    grid-area: tresors;
+
+}
 div.sheet-logo_inventaire {
     grid-area: logo;
     background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/logo.png);
@@ -489,15 +502,6 @@ div.sheet-argent_inventaire input[type="number"] {
     margin-top: 5%;
 }
 
-div.sheet-gemmes_inventaire {
-
-}
-div.sheet-armes_inventaire {
-
-}
-div.sheet-armures_inventaire {
-
-}
 
 /* _________________Sorts-Dons Sheet Structure ________________*/
 
