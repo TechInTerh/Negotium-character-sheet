@@ -458,9 +458,13 @@ div.sheet-gemmes_inventaire {
 }
 div.sheet-armes_inventaire {
     grid-area: armes;
+    margin-left: 15px;
+    margin-right: 5px;
 }
 div.sheet-armures_inventaire {
     grid-area: armures;
+    margin-left: 5px;
+    margin-right : 10px;
 }
 div.sheet-tresors_inventaire{
     grid-area: tresors;
