@@ -92,7 +92,7 @@ button[type="roll"]:not(.sheet-small) {
     color: black;
     height: 20px;
     width: 20px;
-    margin-left: 15px;
+    margin-left: 53px;
 }
 
 button[type="roll"]:not(.sheet-small)::before {
@@ -265,7 +265,7 @@ div.sheet-aptitudes {
     grid-area: aptitudes;
     background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
     background-repeat: no-repeat;
-    background-size: 470px 585px;
+    background-size: 570px 585px;
     padding-left: 15px;
     padding-top: 20px;
     display: grid; /* the grid that contain the 3 aptitude */
@@ -286,8 +286,8 @@ div.sheet-aptitudes div.sheet-section-small {
 div.sheet-aptitudes div.sheet-section-big {
 
     height: 150px;
-    width: 420px;
-    padding-left: 9px;
+    width: 540px;
+    padding-left: 10px;
     padding-top: 1px;
     display: grid; /* the grid with all sub-attribute */
     grid-template-columns: 1fr 1fr;
@@ -296,10 +296,11 @@ div.sheet-aptitudes div.sheet-section-big {
 
 div.sheet-aptitudes div.sheet-section-very-small {
     background-image: url(https://github.com/Roll20/roll20-character-sheets/blob/master/Feast_of_Legends/images/FoLblock1.jpg?raw=true);
-    background-size: 165px 30px;
+    background-size: 235px 30px;
     background-repeat: no-repeat;
     height: 30px;
-    width: 165px;
+    width: 270px;
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
