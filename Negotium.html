@@ -1,4 +1,5 @@
 <!--Button for Tabs -->
+<link rel="stylesheet" href="../example/Dnd5/5th Edition Legacy.css">
 <div>
 	<button type="action" name="act_character">Character</button>
 	<button type="action" name="act_capacite">Capacité</button>
@@ -346,6 +347,13 @@
 
 			</fieldset>
 		</div>
+		<div class="passifs_capacite section">
+			<fieldset class="repeating_passif">
+				<input type="text" name="attr_name_passi" placeholder="Nom du passif"/>
+				<br></br>
+				<textarea name="attr_descritption_passif" placeholder="Description Passif"></textarea>
+			</fieldset>
+		</div>
 	</div>
 </div>
 <div class='sheet-sorts-dons'>
@@ -379,7 +387,7 @@
 			</h2>
 		</div>
 		<div class="argent_inventaire section">
-            <span>PO :</span>
+			<span>PO :</span>
 			<input type="number" name="attr_numbre_PO">
 			<br>
 			<span>PA :</span>
@@ -421,6 +429,8 @@
             });
         });
     });
+
+
 
 
 </script>

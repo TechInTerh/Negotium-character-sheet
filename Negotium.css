@@ -40,8 +40,10 @@ h2 {
 
 input[type="text"] {
     background-color: transparent;
-    border-style: none none solid none;
-    border-color: black;
+    border-style: outset outset outset outset;
+    border-color: grey;
+    border-radius: 25px;
+
 }
 
 input[type="number"] {
@@ -206,6 +208,7 @@ div.sheet-name label {
 
 div.sheet-name input[type="text"] {
     width: 100px;
+
 }
 
 div.sheet-name input[type="checkbox"] {
@@ -230,9 +233,9 @@ div.sheet-etats {
 
 div.sheet-etats div.sheet-section-stat {
     background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/images/square_sta_newt.png);
-    background-size: 105px 45px;
+    background-size: 115px 40px;
     background-repeat: no-repeat;
-    background-position-x: 90%;
+    background-position-x: 100%;
     background-position-y: center;
 }
 
@@ -340,8 +343,8 @@ div.sheet-main_capacite {
     grid-template-columns: 2fr 3fr;
     grid-template-rows: 0.8fr 0.5fr 4fr;
     grid-template-areas:"logo   faculte"
-						"_  faculte"
-						"equipement faculte";
+						"passifs  faculte"
+						"passifs faculte";
     grid-gap: 3px;
     width: 800px; /* Defines the width and height of the sheet */
     height: 1000px;
@@ -390,12 +393,6 @@ div.sheet-main_capacite h3 {
 }
 
 
-div.sheet-faculte_capacite input[type="text"] {
-    background-color: transparent;
-    border-style: outset outset outset outset;
-    border-color: grey;
-    border-radius: 25px;
-}
 
 div.sheet-faculte_capacite input[type="text"].sheet-small {
     width: 50px;
@@ -414,6 +411,18 @@ div.sheet-faculte_capacite input[type="number"] {
     margin-left: 0%;
 }
 
+div.sheet-passifs_capacite {
+    grid-area: passifs;
+    background-image: url(https://imgsrv.roll20.net/?src=https%3A//raw.githubusercontent.com/victto/Negotium/master/images/Square_Stat_Square.png);
+    background-repeat: no-repeat;
+    background-position-y: 10px;
+    background-position-x: 19px;
+    background-size: 300px 830px;
+    padding-right: 5%;
+    padding-top: 7%;
+    padding-left: 7%;
+}
+
 
 div.sheet-equipement_capacite {
     grid-area: equipement;
@@ -426,10 +435,6 @@ div.sheet-equipement_capacite {
 }
 
 div.sheet-equipement_capacite input[type="text"] {
-    background-color: transparent;
-    border-style: outset outset outset outset;
-    border-color: grey;
-    border-radius: 25px;
 }
 
 div.sheet-equipement_capacite textarea {
@@ -456,20 +461,24 @@ div.sheet-main_inventaire {
 div.sheet-gemmes_inventaire {
     grid-area: gemmes;
 }
+
 div.sheet-armes_inventaire {
     grid-area: armes;
     margin-left: 15px;
     margin-right: 5px;
 }
+
 div.sheet-armures_inventaire {
     grid-area: armures;
     margin-left: 5px;
-    margin-right : 10px;
+    margin-right: 10px;
 }
-div.sheet-tresors_inventaire{
+
+div.sheet-tresors_inventaire {
     grid-area: tresors;
 
 }
+
 div.sheet-logo_inventaire {
     grid-area: logo;
     background-image: url(https://raw.githubusercontent.com/victto/Negotium/master/logo.png);
