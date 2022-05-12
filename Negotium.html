@@ -75,16 +75,16 @@
 			<h2></h2>
 			<div class="base-stat flex-center">
 				<label>Base: <input name="attr_pv_base" type="number"
-									value="(@{physique} + (@{constitution} * 5)) * 2 +25" disabled="true"></label>
+									value="(@{physique} + (@{base_constitution} * 5)) * 2 +25" disabled="true"></label>
 			</div>
 			<div class="base-stat flex-center">
 				<label>Base: <input name="attr_malf_base" type="number"
-									value="(@{mental} + @{concentration} ) *2 + (@{social} + @{charisme} ) * 2 +20"
+									value="(@{mental} + @{base_concentration} ) *2 + (@{social} + @{base_charisme} ) * 2 +20"
 									disabled="true"></label>
 			</div>
 			<div class="base-stat flex-center">
 				<label>Base:<input name="attr_vigueur_base" type="number"
-								   value="(@{physique} + @{athletisme}) * 2 + ( @{mental} * @{concentration} ) * 2 + 10"
+								   value="(@{physique} + @{base_athletisme}) * 2 + ( @{mental} * @{base_concentration} ) * 2 + 10"
 								   disabled="true"></label>
 			</div>
 			<div>
@@ -97,19 +97,19 @@
 				<label>Armure Ment:</label>
 				<h5>Ajout : <input name="attr_ajout_armure_ment" type="number" value="0"></h5>
 				<h5>Total : <input name="attr_armure_ment" type="number"
-								   value="@{resistance_mental}+@{ajout_armure_ment}" disabled="true"></h5>
+								   value="@{base_resistance_mental}+@{ajout_armure_ment}" disabled="true"></h5>
 			</div>
 			<div>
 				<label>Réactivité:</label>
 				<h5>Ajout : <input name="attr_ajout_reactivite" type="number" value="0"></h5>
 				<h5>Total : <input name="attr_reactivite" type="number"
-								   value="1+floor(@{dexterite}/2)+@{ajout_reactivite}"
+								   value="1+floor(@{base_dexterite}/2)+@{ajout_reactivite}"
 								   disabled="true"></h5>
 			</div>
 			<div>
 				<label>Mobilité:</label>
 				<h5>Ajout : <input name="attr_ajout_mobilite" type="number" value="0"></h5>
-				<h5>Total : <input name="attr_mobilite" type="number" value="5 + @{athletisme}+@{ajout_mobilite}"
+				<h5>Total : <input name="attr_mobilite" type="number" value="5 + @{base_athletisme}+@{ajout_mobilite}"
 								   disabled="true"></h5>
 			</div>
 		</div>
@@ -132,7 +132,7 @@
 					<span>+</span>
 					<input name="attr_bonus_dexterite" type="number" value="0">
 					<div class="number_total_aptitude">
-						<input class="number_total_aptitude" name="attr_dexterite" type="number" disabled="true" value="@{base_dexterite}+@{bonus_dexterite}">
+						<input name="attr_dexterite" type="number" disabled="true" value="@{base_dexterite}+@{bonus_dexterite}">
 					</div>
 					<button name="roll_dexterite" type="roll"
 							value="&{template:default} {{name=Dexterite}} {{Result=[[ ((@{dexterite} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6  + @{physique} ]] }}"></button>
@@ -140,38 +140,68 @@
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Const: </label>
-					<input name="attr_constitution" type="number" value="0">
+					<input name="attr_base_constitution" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_constitution" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_constitution" type="number" disabled="true" value="@{base_constitution}+@{bonus_constitution}">
+					</div>
 					<button name="roll_constitution" type="roll"
 							value="&{template:default} {{name=Constitution}} {{Result=[[ ((@{constitution} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
 
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Visée: </label>
-					<input name="attr_visee" type="number" value="0">
+					<input name="attr_base_visee" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_visee" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_visee" type="number" disabled="true" value="@{base_visee}+@{bonus_visee}">
+					</div>
 					<button name="roll_visee" type="roll"
 							value="&{template:default} {{name=Visee}} {{Result=[[ ((@{visee} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Mélée: </label>
-					<input name="attr_melee" type="number" value="0">
+					<input name="attr_base_melee" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_melee" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_melee" type="number" disabled="true" value="@{base_melee}+@{bonus_melee}">
+					</div>
 					<button name="roll_melee" type="roll"
 							value="&{template:default} {{name=Melee}} {{Result=[[ ((@{melee} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Athletisme: </label>
-					<input name="attr_athletisme" type="number" value="0">
+					<input name="attr_base_athletisme" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_athletisme" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_athletisme" type="number" disabled="true" value="@{base_athletisme}+@{bonus_athletisme}">
+					</div>
 					<button name="roll_athletisme" type="roll"
 							value="&{template:default} {{name=Athletisme}} {{Result=[[ ((@{athletisme} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Discretion: </label>
-					<input name="attr_discretion" type="number" value="0">
+					<input name="attr_base_discretion" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_discretion" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_discretion" type="number" disabled="true" value="@{base_discretion}+@{bonus_discretion}">
+					</div>
 					<button name="roll_discretion" type="roll"
 							value="&{template:default} {{name=Discretion}} {{Result=[[ ((@{discretion} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Force: </label>
-					<input name="attr_force" type="number" value="0">
+					<input name="attr_base_force" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_force" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_force" type="number" disabled="true" value="@{base_force}+@{bonus_force}">
+					</div>
 					<button name="roll_force" type="roll"
 							value="&{template:default} {{name=Force}} {{Result=[[ ((@{force} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{physique}) ]]}}"></button>
 				</div>
@@ -183,43 +213,79 @@
 			<div class="section-big flex-center">
 				<div class="section-very-small flex-center">
 					<label>Intimidation: </label>
-					<input name="attr_intimidation" type="number" value="0">
+					<input name="attr_base_intimidation" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_intimidation" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_intimidation" type="number" disabled="true" value="@{base_intimidation}+@{bonus_intimidation}">
+					</div>
 					<button name="roll_intimidation" type="roll"
 							value="&{template:default} {{name=Intimidation}} {{Result=[[ ((@{intimidation} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Charisme: </label>
-					<input name="attr_charisme" type="number" value="0">
+					<input name="attr_base_charisme" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_charisme" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_charisme" type="number" disabled="true" value="@{base_charisme}+@{bonus_charisme}">
+					</div>
 					<button name="roll_charisme" type="roll"
 							value="&{template:default} {{name=Charisme}} {{Result=[[ ((@{charisme} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Identification: </label>
-					<input name="attr_identification" type="number" value="0">
+					<input name="attr_base_identification" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_identification" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_identification" type="number" disabled="true" value="@{base_identification}+@{bonus_identification}">
+					</div>
 					<button name="roll_indentification" type="roll"
 							value="&{template:default} {{name=Identification}} {{Result=[[ ((@{identification} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Imposture: </label>
-					<input name="attr_imposture" type="number" value="0">
+					<input name="attr_base_imposture" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_imposture" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_imposture" type="number" disabled="true" value="@{base_imposture}+@{bonus_imposture}">
+					</div>
 					<button name="roll_imposture" type="roll"
 							value="&{template:default} {{name=Imposture}} {{Result=[[ ((@{imposture} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Connaissance: </label>
-					<input name="attr_connaissance" type="number" value="0">
+					<input name="attr_base_connaissance" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_connaissance" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_connaissance" type="number" disabled="true" value="@{base_connaissance}+@{bonus_connaissance}">
+					</div>
 					<button name="roll_connaissance" type="roll"
 							value="&{template:default} {{name=Connaissance}} {{Result=[[ ((@{connaissance} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Survie: </label>
+					<input name="attr_base_survie" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_survie" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_survie" type="number" disabled="true" value="@{base_survie}+@{bonus_survie}">
+					</div>
 					<input name="attr_survie" type="number" value="0">
 					<button name="roll_survie" type="roll"
 							value="&{template:default} {{name=Survie}} {{Result=[[ ((@{survie} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Loyauté: </label>
-					<input name="attr_loyaute" type="number" value="0">
+					<input name="attr_base_loyaute" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_loyaute" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_loyaute" type="number" disabled="true" value="@{base_loyaute}+@{bonus_loyaute}">
+					</div>
 					<button name="roll_loyaute" type="roll"
 							value="&{template:default} {{name=Loyaute}} {{Result=[[ ((@{loyaute} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
 				</div>
@@ -231,31 +297,56 @@
 			<div class="section-big flex-center">
 				<div class="section-very-small flex-center">
 					<label>Recherche: </label>
-					<input name="attr_recherche" type="number" value="0">
+					<input name="attr_base_recherche" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_recherche" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_recherche" type="number" disabled="true" value="@{base_recherche}+@{bonus_recherche}">
+					</div>
 					<button name="roll_recherche" type="roll"
 							value="&{template:default} {{name=Recherche}} {{Result=[[ ((@{recherche} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Perception: </label>
-					<input name="attr_perception" type="number" value="0">
+					<input name="attr_base_perception" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_perception" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_perception" type="number" disabled="true" value="@{base_perception}+@{bonus_perception}">
+					</div>
 					<button name="roll_perception" type="roll"
 							value="&{template:default} {{name=Perception}} {{Result=[[ ((@{perception} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Resistance_M: </label>
-					<input name="attr_resistance_mental" type="number" value="0">
+					<input name="attr_base_resistance_mental" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_resistance_mental" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_resistance_mental" type="number" disabled="true" value="@{base_resistance_mental}+@{bonus_resistance_mental}">
+					</div>
 					<button name="roll_resistance_mental" type="roll"
 							value="&{template:default} {{name=Resistance_Mental}} {{Result=[[ ((@{resistance_mental} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Concentration: </label>
-					<input name="attr_concentration" type="number" value="0">
+					<input name="attr_base_concentration" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_concentration" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_concentration" type="number" disabled="true" value="@{base_concentration}+@{bonus_concentration}">
+					</div>
 					<button name="roll_concentration" type="roll"
 							value="&{template:default} {{name=Concentration}} {{Result=[[ ((@{concentration} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
 				</div>
 				<div class="section-very-small flex-center">
 					<label>Analyse: </label>
-					<input name="attr_analyse" type="number" value="0">
+					<input name="attr_base_analyse" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_analyse" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input name="attr_analyse" type="number" disabled="true" value="@{base_analyse}+@{bonus_analyse}">
+					</div>
 					<button name="roll_analyse" type="roll"
 							value="&{template:default} {{name=Analyse}} {{Result=[[ (((@{analyse} + @{is_bonus_divin} + @{modif_jet})) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{mental}) ]]}}"></button>
 				</div>
@@ -280,6 +371,7 @@
 				<br></br>
 				<span>Succès:</span>
 				<select name="attr_sous_apti_dice_for_success_capa">
+					<option value="0">--</option>
 					<option value="@{dexterite}">Dextérité</option>
 					<option value="@{constitution}">Constitution</option>
 					<option value="@{visee}">Visee</option>
@@ -299,16 +391,15 @@
 					<option value="@{resistance_mental}">Resistance_M</option>
 					<option value="@{concentration}">Concentration</option>
 					<option value="@{analyse}">Analyse</option>
-					<option value="0">--</option>
 				</select>
 				<span>+</span>
 				<input type="number" name="attr_bonus_dice_for_success_capa" value="0"/>
 				<span>d6 +</span>
 				<select name="attr_apti_value_for_success_capa">
+					<option value="0">--</option>
 					<option value="@{physique}">Physique</option>
 					<option value="@{social}">Social</option>
 					<option value="@{mental}">Mental</option>
-					<option value="0">--</option>
 				</select>
 				<span>+</span>
 				<input type="number" name="attr_bonus_value_for_success_capa" value="0"/>
@@ -316,6 +407,7 @@
 				<br></br>
 				<span>Dégât:</span>
 				<select name="attr_sous_apti_dice_for_degat_capa">
+					<option value="0">--</option>
 					<option value="@{dexterite}">Dextérité</option>
 					<option value="@{constitution}">Constitution</option>
 					<option value="@{visee}">Visee</option>
@@ -335,17 +427,16 @@
 					<option value="@{resistance_mental}">Resistance_M</option>
 					<option value="@{concentration}">Concentration</option>
 					<option value="@{analyse}">Analyse</option>
-					<option value="0">--</option>
 				</select>
 				<span>+</span>
 				<input type="number" name="attr_bonus_dice_for_degat_capa" value="0"/>
 				<span>d4. </span>
 				<span>Action: </span>
 				<select name="attr_action_capa">
+					<option value="--">--</option>
 					<option value="Grande Action">Grande Action</option>
 					<option value="Petite Action">Petite Action</option>
 					<option value="Un tour">Un tour</option>
-					<option value="--">--</option>
 				</select>
 				<textarea name="attr_description_capa"
 						  placeholder="Entrez la description de la capacité Ici"></textarea>
