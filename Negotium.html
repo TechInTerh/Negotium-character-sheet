@@ -128,7 +128,12 @@
 			<div class="section-big flex-center">
 				<div class="section-very-small flex-center">
 					<label>Dexterité: </label>
-					<input name="attr_dexterite" type="number" value="0">
+					<input name="attr_base_dexterite" type="number" value="0">
+					<span>+</span>
+					<input name="attr_bonus_dexterite" type="number" value="0">
+					<div class="number_total_aptitude">
+						<input class="number_total_aptitude" name="attr_dexterite" type="number" disabled="true" value="@{base_dexterite}+@{bonus_dexterite}">
+					</div>
 					<button name="roll_dexterite" type="roll"
 							value="&{template:default} {{name=Dexterite}} {{Result=[[ ((@{dexterite} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6  + @{physique} ]] }}"></button>
 
@@ -429,6 +434,7 @@
             });
         });
     });
+
 
 
 
