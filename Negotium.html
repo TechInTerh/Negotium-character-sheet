@@ -84,7 +84,7 @@
 			</div>
 			<div class="base-stat flex-center">
 				<label>Base:<input name="attr_vigueur_base" type="number"
-								   value="(@{physique} + @{base_athletisme}) * 2 + ( @{mental} * @{base_concentration} ) * 2 + 10"
+								   value="(@{physique} + @{base_athletisme}) * 2 + ( @{mental} + @{base_concentration} ) * 2 + 10"
 								   disabled="true"></label>
 			</div>
 			<div>
@@ -274,7 +274,6 @@
 					<div class="number_total_aptitude">
 						<input name="attr_survie" type="number" disabled="true" value="@{base_survie}+@{bonus_survie}">
 					</div>
-					<input name="attr_survie" type="number" value="0">
 					<button name="roll_survie" type="roll"
 							value="&{template:default} {{name=Survie}} {{Result=[[ ((@{survie} + @{is_bonus_divin} + @{modif_jet}) * (@{is_avantage} + 1) * (1-(@{is_desavantage} * 0.5)) )d6 + (@{social}) ]]}}"></button>
 				</div>
